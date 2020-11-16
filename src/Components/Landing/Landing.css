@@ -1,0 +1,25 @@
+.flexing{
+    display: flex;
+    justify-content: space-between;
+}
+.image{
+    padding-left: 2%;
+}
+img{
+    width: 100%;
+    margin-top: 2%;
+}
+.head{
+    padding-right: 2%;
+    font-size: 200%;
+    margin-top: 11%;
+    color: #F92828;
+    text-align: center;
+}
+.quote{
+    margin-top: 3%;
+    color: #F92828;
+    font-size: 300%;
+    text-align: center;
+    font-family: 'Tillana', cursive;
+}

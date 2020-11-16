@@ -1,0 +1,25 @@
+.bg-img {
+  background-image: url(bg_heading.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 87vh;
+}
+.req {
+  text-align: center;
+}
+.req h1 {
+  font-size: 50px;
+}
+.m-input {
+  text-align: center;
+}
+.m-input input {
+  padding: 20px 50px;
+  margin-top: 3%;
+  font-size: 20px;
+  /* background-size: ; */
+}
+.m-input button {
+  margin-top: 3%;
+}

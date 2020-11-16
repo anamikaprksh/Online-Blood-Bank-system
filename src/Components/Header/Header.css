@@ -1,0 +1,43 @@
+header {
+  background-color: #364652;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.head-flexing {
+  display: flex;
+  justify-content: space-between;
+}
+.head-flexing div {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.wi1 {
+  width: 35%;
+  color: white;
+}
+.wi2 {
+  width: 20%;
+}
+.button1 {
+  background-color: #eff4f8;
+  border: none;
+  color: black;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 7px;
+}
+.button2 {
+  background-color: #dccde8;
+  border: none;
+  color: white;
+  padding: 5px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 7px;
+}
