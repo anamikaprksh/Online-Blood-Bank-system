@@ -1,0 +1,91 @@
+
+
+.back-img {
+  background-image: url(../static/gp_2.svg);
+  background-size: cover;
+  width: 100%;
+  height: 85vh;
+}
+.outer1{
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+hr{
+  background-color: #EA4848;
+  height: 2px;
+}
+.heading {
+  text-align: center;
+  font-size: 25px;
+}
+.flexing {
+  display: flex;
+  justify-content: space-between;
+}
+.marg{
+  margin-top: 2%;
+}
+/* .details {
+  padding: 0.5%;
+  background-color: #ffffff;
+  margin-top: 2%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 35px;
+  box-shadow: 6px 6px grey;
+  border: 1px solid black;
+}
+.details button {
+  border-radius: 35px;
+  padding: 10px 23px;
+  margin-top: 8.5%;
+  font-size: 25px;
+}
+.name {
+  width: 45%;
+  padding-left: 2%;
+}
+.wi {
+  width: 12%;
+} */
+.d-req{
+  font-size: 15px;
+    border: 1px solid gray;
+    width: 62%;
+    border-radius: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 1%;
+    box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.d-units{
+  font-size: 15px;
+  border: 1px solid gray;
+    width: 20%;
+    border-radius: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 1%;
+    box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.d-button button{
+  background-color: #EA4848;
+  color: white;
+  border-radius: 40px;
+  padding: 9px 33px;
+  margin-top: 5.5%;
+  font-size: 23px;
+  outline: none;
+}
+.d-button{
+  
+  border: 1px solid gray;
+  width: 15%;
+  border-radius: 40px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 1%;
+  box-shadow: 5px 5px rgb(151, 151, 151);
+}

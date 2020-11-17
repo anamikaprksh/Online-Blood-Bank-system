@@ -1,0 +1,55 @@
+.bk-img {
+    background-image: url(../static/gp_2.svg);
+    background-size: cover;
+    width: 100%;
+    height: 85vh;
+  }
+.flexing{
+    display: flex;
+    justify-content: space-between;
+}
+  .outer{
+    margin-left: 18%;
+    margin-right: 18%;
+    width: 64%;
+}
+h1{
+    font-size: 40px;
+}
+.a-req h2{
+    font-size: 20px;
+}
+hr{
+    background-color: #EA4848;
+    height: 2px;
+}
+.mar{
+    margin-top: 2%;
+}
+.a-req{
+    border: 1px solid gray;
+    width: 80%;
+    border-radius: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 1%;
+    box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.a-button button{
+    background-color: #EA4848;
+  color: white;
+    border-radius: 40px;
+    padding: 5px 50px;
+    margin-top: 5.5%;
+    font-size: 23px;
+    outline: none;
+}
+.a-button{
+    border: 1px solid gray;
+    width: 18%;
+    border-radius: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 1%;
+    box-shadow: 5px 5px rgb(151, 151, 151);
+}

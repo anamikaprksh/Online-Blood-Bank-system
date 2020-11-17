@@ -1,0 +1,74 @@
+.bakimg{
+    background-image: url(../static/gp_2.svg);
+    background-size: cover;
+    width: 100%;
+    height: 88vh;
+}
+.flexing{
+    display: flex;
+    justify-content: space-between;
+}
+.outer2 {
+  margin-left: 18%;
+  margin-right: 18%;
+  width: 64%;
+}
+.m-head {
+  text-align: center;
+}
+.wid1{
+    font-size: 25px;
+    font-weight: bold;
+}
+.m-user h2{
+    font-size: 18px;
+}
+.m-user{
+    border: 1px solid gray;
+    width: 48%;
+    color: #ff0000;
+    border-radius: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 1%;
+    box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.marg1{
+    margin-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 94%;
+}
+.bt-width{
+    padding-left: 25%;
+    padding-right: 25%;
+    width: 50%;
+    margin-top: 3%;
+}
+.m-button1 button{
+    background-color: #EA4848;
+  color: white;
+    border-radius: 40px;
+    padding: 5px 64px;
+    margin: 3%;
+    font-size: 23px;
+    outline: none;
+}
+.m-button2 button{
+    background-color: #EA4848;
+  color: white;
+    border-radius: 40px;
+    padding: 5px 80px;
+    margin: 3%;
+    font-size: 23px;
+    outline: none;
+}
+.m-button1,.m-button2{
+    border: 1px solid gray;
+    width: 45%;
+    border-radius: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 1%;
+    box-shadow: 5px 5px rgb(151, 151, 151);
+}

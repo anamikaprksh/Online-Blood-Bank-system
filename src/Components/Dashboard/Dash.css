@@ -1,24 +1,47 @@
-img {
-  width: 94%;
-}
-.image {
-  text-align: center;
-  padding-right: 6%;
+.dash-bg-img {
+  background-image: url(../static/Group30.svg);
+  background-size: cover;
+  width: 100%;
+  height: 88vh;
+  position: absolute;
 }
 .buttons {
   text-align: center;
-  /* padding-top: 1%; */
 }
-button{
-  background-color: #ea4848;
-  border: none;
-  color: white;
-  padding: 20px 60px;
+.dash-button1 {
+  margin-top: 13%;
+}
+.dash-button2 {
+  margin-top: 4%;
+  margin-bottom: 12%;
+}
+.dash-button1,
+.dash-button2 {
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  border-radius: 7px;
-  margin-left: 2%;
-  margin-right: 2%;
+  border: 1px solid gray;
+  margin-left: 34%;
+  margin-right: 34%;
+  width: 32%;
+  border-radius: 40px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.dash-button1 button {
+  background-color: #ea4848;
+  color: white;
+  border-radius: 40px;
+  padding: 10px 170px;
+  margin: 3%;
+  font-size: 35px;
+  outline: none;
+}
+.dash-button2 button {
+  background-color: #ea4848;
+  color: white;
+  border-radius: 40px;
+  padding: 10px 163px;
+  margin: 3%;
+  font-size: 35px;
+  outline: none;
 }

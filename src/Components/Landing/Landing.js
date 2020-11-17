@@ -7,7 +7,7 @@ export default function Lands() {
         <div className="image">
           <img src="images/undraw_medicine_b1ol 1.svg"></img>
         </div>
-        <div className="head">
+        <div className="drive-head">
           <h1>BLOOD BANK DRIVE</h1>
         </div>
       </div>

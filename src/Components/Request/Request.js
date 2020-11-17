@@ -17,7 +17,7 @@ export default function Requests() {
         <div>
           <input placeholder="Date of apply(dd/mm/yyy)"></input>
         </div>
-        <div>
+        <div className="req-button">
           <button>Apply</button>
         </div>
       </div>

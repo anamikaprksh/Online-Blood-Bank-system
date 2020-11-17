@@ -9,15 +9,18 @@ img{
     width: 100%;
     margin-top: 2%;
 }
-.head{
+.drive-head{
     padding-right: 2%;
-    font-size: 200%;
+    
     margin-top: 11%;
     color: #F92828;
     text-align: center;
 }
+.drive-head h1{
+    font-size: 70px;
+}
 .quote{
-    margin-top: 3%;
+    margin-top: 1%;
     color: #F92828;
     font-size: 300%;
     text-align: center;

@@ -2,14 +2,15 @@ import React from "react";
 import "./Dash.css";
 export default function DashB() {
   return (
-    <div>
-      <div className="image">
-        <img src="images/Group 27.svg"></img>
+    <div className="dash-bg-img">
+      <div><hr></hr></div>
+      <div className="dash-button1">
+        <button>Donate</button>
       </div>
-      <div className="buttons">
-          <button>Donate</button>
-          <button>Request</button>
+      <div className="dash-button2">
+        <button>Request</button>
       </div>
+      <div><hr></hr></div>
     </div>
   );
 }

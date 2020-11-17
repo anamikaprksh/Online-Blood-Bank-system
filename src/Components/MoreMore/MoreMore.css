@@ -1,0 +1,63 @@
+.img-back{
+    background-image: url(../static/gp_2.svg);
+    background-size: cover;
+    width: 100%;
+    height: 88vh;
+}
+.flexing {
+  display: flex;
+  justify-content: space-between;
+}
+.mm-outer {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+}
+.mm-head {
+  text-align: center;
+}
+.uname {
+  background-color: #ea4848;
+  color: white;
+  text-align: center;
+  border-radius: 40px;
+}
+.uname h2 {
+  padding: 1%;
+}
+.mm-details {
+  border: 1px solid gray;
+  width: 48%;
+  border-radius: 35px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 4%;
+  box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.mm-details h3 {
+  color: #e40000;
+}
+.mm-details-dot {
+  text-align: center;
+  margin-top: 5%;
+}
+.mm-button {
+  border: 1px solid gray;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 20%;
+  border-radius: 40px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 3%;
+  box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.mm-button button {
+  background-color: #EA4848;
+  color: white;
+  border-radius: 40px;
+  padding: 7px 72px;
+  margin: 4%;
+  font-size: 23px;
+  outline: none;
+}
