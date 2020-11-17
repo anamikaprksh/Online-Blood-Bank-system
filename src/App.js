@@ -11,6 +11,7 @@ import UserProfile from './Components/Profile/Profile'
 import AllReq from './Components/AllRequest/AllRequest'
 import MoreButton from './Components/More/More'
 import MoMo from './Components/MoreMore/MoreMore'
+import Log from './Components/Login/Login'
 function App() {
   return (
     <div>
@@ -25,6 +26,7 @@ function App() {
         <AR path='/allrequest'></AR>
         <MB path='/more'></MB>
         <MM path="/moremore"></MM>
+        <Lgin path='/login'></Lgin>
       </Router>
       {/* <FooterPage></FooterPage> */}
     </div>
@@ -59,6 +61,9 @@ function MB(){
 }
 function MM(){
   return <MoMo></MoMo>
+}
+function Lgin(){
+  return <Log></Log>
 }
 
 export default App;
