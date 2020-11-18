@@ -1,13 +1,25 @@
+.main-ba-img{
+    background-image: url(../static/Group40.svg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  /* background-repeat: repeat; */
+  /* background-attachment: fixed; */
+  display: inline;
+}
 .flexing{
     display: flex;
     justify-content: space-between;
 }
 .image{
     padding-left: 2%;
+    display: block;
 }
 img{
     width: 100%;
     margin-top: 2%;
+    display: block;
 }
 .drive-head{
     padding-right: 2%;
@@ -29,13 +41,13 @@ h1{
     text-align: center;
 }
 .quote{
-    margin-top: 1%;
-    color: #F92828;
+    margin-top: 0.5%;
+    color: #ff0000;
     font-size: 300%;
     text-align: center;
     font-family: 'Tillana', cursive;
 }
-.ml9 {
+/* .ml9 {
     position: relative;
     font-weight: 200;
     font-size: 4em;
@@ -54,5 +66,86 @@ h1{
     transform-origin: 50% 100%;
     display: inline-block;
     line-height: 1em;
-  }
+  } */
   
+  @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.blood{
+    margin-top: 5%;
+}
+.bank,.drive{
+    margin-top: 1%;
+}
+.drive{
+    margin-bottom: 1%;
+}
+
+.blood svg {
+    display: block;
+    font: 10em 'Goldman';
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.bank svg {
+    display: block;
+    font: 10em 'Goldman';
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.drive svg {
+    display: block;
+    font: 10em 'Goldman';
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #40476D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #000000;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #8B0000;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #1e2367;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #581d4b;
+	animation-delay: -5s;
+}
+.text-copy:nth-child(6){
+	stroke: #FF0000;
+	animation-delay: -6s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
