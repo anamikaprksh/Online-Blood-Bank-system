@@ -1,17 +1,14 @@
-import React from 'react';
-import './Login.css'
-import  {FaUserAlt} from "react-icons/fa";
-import {FaLock} from "react-icons/fa";
+import React from "react";
+import "./Login.css";
+import { FaUserAlt } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 
-export default function Log(){
-    return(
-        <div className="bgpic">
-        <h1 style={{textAlign:"center"}}>
-            Login
-        </h1>
+export default function Log() {
+  return (
+    <div className="bgpic">
+      <h1 style={{ textAlign: "center" }}>Login</h1>
       <div className="out">
-        <div>
-         
+        <div className='inside'>
           <h3 className="big">
             <span>
               {" "}
@@ -26,16 +23,12 @@ export default function Log(){
             </span>
             <input placeholder="Password"></input>
           </h3>
-          
+          <p>Forgot password?</p>
         </div>
-        <div>
-                <p>Forgot password?</p>
-            </div>
       </div>
       <div className="signin-button">
-          <button>Sign in</button>
-        </div>
-        
+        <button>Sign in</button>
+      </div>
     </div>
   );
 }
