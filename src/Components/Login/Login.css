@@ -1,5 +1,5 @@
 .bgpic{
-    background-image: url(../static/bg_heading.svg);
+  background-image: url(../static/bg_heading.svg);
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute ;
@@ -11,11 +11,10 @@
 .big span{
     background-color: red;
     color: white;
-    
 }
 
 .out{
-    display: grid;
+    display:grid;
     justify-content: center;
     padding: 5% 10%;
     border: solid rgb(179, 173, 173);
@@ -25,13 +24,17 @@
     width: 30%;
     text-align: center;
     align-content: center;
-    margin-left: 25%;
+    margin-left: 50%;
     
+}
+.inside{
+  display: inline;
+  margin-left: 30%;
 }
 
 
 .signin-button{
-    border: 1px solid gray;
+  border: 1px solid gray;
   margin-left: 42%;
   margin-right: 42%;
   width: 16%;
@@ -42,7 +45,7 @@
   box-shadow: 5px 5px rgb(151, 151, 151);
 }
 .signin-button button {
-    background-color: #EA4848;
+    background-color:#EA4848;
     color: white;
     border-radius: 40px;
     padding: 3% 32%;
