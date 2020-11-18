@@ -1,0 +1,59 @@
+.bgpic{
+    background-image: url(../static/bg_heading.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute ;
+  width: 100%;
+  height: 100%;
+}
+.big span{
+    background-color: red;
+    color: white;
+    
+}
+
+.out{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 10%;
+    border: solid rgb(179, 173, 173);
+    border-radius: 35px;
+    box-shadow: 5px 5px grey;
+    background-color: white;
+    width: 30%;
+    text-align: center;
+    align-content: center;
+    margin-left: 25%;
+}
+.sign-button{
+    border: 1px solid gray;
+  margin-left: 42%;
+  margin-right: 42%;
+  width: 16%;
+  border-radius: 40px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 3%;
+  box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.sign-button button {
+    background-color: #EA4848;
+    color: white;
+    border-radius: 40px;
+    padding: 3% 32%;
+    margin: 4%;
+    font-size: 15px;
+    outline: none;
+  }
+
+input{
+    padding: 4% 1%;
+    width: 80%;
+    margin: 2% 0%;
+}
+span{
+    padding-top: 1%;
+    padding-bottom: 4%;
+    text-align: center;
+    padding-left: 2.5%;
+}
