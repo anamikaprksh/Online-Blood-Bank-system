@@ -6,12 +6,16 @@
   width: 100%;
   height: 100%;
 }
+<<<<<<< HEAD
 h1{
   font-size: 60px;
 }
 .head-login{
   margin-top: 2%;
 }
+=======
+
+>>>>>>> 9dc03fc4967e3307051ba71805a156c815e79bd9
 
 .big span{
     background-color: red;
@@ -24,19 +28,30 @@ h1{
     padding: 5% 10%;
     border: solid rgb(179, 173, 173);
     border-radius: 35px;
+<<<<<<< HEAD
     box-shadow: 5px 5px grey;
     background-color: white;
+=======
+    box-shadow: 5px 5px red;
+    background-color: red;
+>>>>>>> 9dc03fc4967e3307051ba71805a156c815e79bd9
     width: 30%;
     text-align: center;
     align-content: center;
     margin-left: 50%;
+<<<<<<< HEAD
     margin-top: 2%;
+=======
+>>>>>>> 9dc03fc4967e3307051ba71805a156c815e79bd9
     
 }
 .inside{
   display: inline;
   margin-left: 30%;
+<<<<<<< HEAD
   text-align: center;
+=======
+>>>>>>> 9dc03fc4967e3307051ba71805a156c815e79bd9
 }
 
 
