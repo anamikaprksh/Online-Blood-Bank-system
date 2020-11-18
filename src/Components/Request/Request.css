@@ -11,13 +11,14 @@
 .req h1 {
   font-size: 50px;
 }
-.m-input {
+.reqes-input {
   text-align: center;
 }
-.m-input input {
-  padding: 20px 50px;
+.reqes-input input {
+  padding: 1%;
   margin-top: 3%;
   font-size: 20px;
+  width: 27%;
   /* background-size: ; */
 }
 .req-button {

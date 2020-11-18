@@ -13,10 +13,13 @@ import MoreButton from "./Components/More/More";
 import MoMo from "./Components/MoreMore/MoreMore";
 import Log from "./Components/Login/Login";
 import Siup from "./Components/Signup/Signup";
+import NavbarPage from './Components/Header1/Header1'
+// import BuMe from './Components/BurgerMenu/App'
 function App() {
   return (
     <div>
-      <HeaderPage></HeaderPage>
+      {/* <HeaderPage></HeaderPage> */}
+      <Head2></Head2>
       <Router>
         <LandingPage path="/"></LandingPage>
         <HeaderPage path="/header"></HeaderPage>
@@ -29,6 +32,8 @@ function App() {
         <MM path="/moremore"></MM>
         <Lgin path="/login"></Lgin>
         <SU path="/signup"></SU>
+        <Head2 path='/mHeader'></Head2>
+        {/* <Burger path='/mHeader'></Burger> */}
       </Router>
       {/* <FooterPage></FooterPage> */}
     </div>
@@ -70,4 +75,11 @@ function Lgin() {
 function SU() {
   return <Siup></Siup>;
 }
+function Head2(){
+  return <NavbarPage></NavbarPage>
+}
+// function Burger(){
+//   return <BuMe></BuMe>
+// }
+
 export default App;

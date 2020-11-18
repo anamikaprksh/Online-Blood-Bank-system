@@ -11,9 +11,8 @@ export default function Lands() {
           <h1>BLOOD BANK DRIVE</h1>
         </div>
       </div>
-      <div className="quote">
-      "GIVE BLOOD, GIFT LIFE"
-      </div>
+      
+      <div className="quote">"GIVE BLOOD, GIFT LIFE"</div>
     </div>
   );
 }

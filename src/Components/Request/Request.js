@@ -7,7 +7,7 @@ export default function Requests() {
       <div className="req">
         <h1>REQUEST</h1>
       </div>
-      <div className="m-input">
+      <div className="reqes-input">
         <div>
           <input placeholder="Blood group"></input>
         </div>

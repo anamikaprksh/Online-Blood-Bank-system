@@ -26,6 +26,7 @@
   background-color: #ffffff;
   text-align: center;
   box-shadow: 5px 5px rgb(151, 151, 151);
+  
 }
 .dash-button1 button {
   background-color: #ea4848;
@@ -44,4 +45,13 @@
   margin: 3%;
   font-size: 35px;
   outline: none;
+  
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffffff;
+  }
+  to {
+    text-shadow: 0 0 30px #ff0000, 0 0 10px #ff3300;
+  }
 }
