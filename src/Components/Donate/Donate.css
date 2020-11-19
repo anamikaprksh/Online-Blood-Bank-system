@@ -1,18 +1,22 @@
-
-
 .back-img {
   background-image: url(../static/gp_2.svg);
-  background-size: cover;
+
   width: 100%;
-  height: 85vh;
+  min-height: 100%;
+
+  position: absolute;
+  background-repeat: repeat;
+  background-attachment: fixed;
+
+  display: inline;
 }
-.outer1{
+.outer1 {
   margin-left: 15%;
   margin-right: 15%;
   width: 70%;
 }
-hr{
-  background-color: #EA4848;
+hr {
+  background-color: #ea4848;
   height: 2px;
 }
 .heading {
@@ -23,7 +27,7 @@ hr{
   display: flex;
   justify-content: space-between;
 }
-.marg{
+.marg {
   margin-top: 2%;
 }
 /* .details {
@@ -50,28 +54,28 @@ hr{
 .wi {
   width: 12%;
 } */
-.d-req{
-  font-size: 15px;
-    border: 1px solid gray;
-    width: 62%;
-    border-radius: 40px;
-    background-color: #ffffff;
-    text-align: center;
-    margin-top: 1%;
-    box-shadow: 5px 5px rgb(151, 151, 151);
-}
-.d-units{
+.d-req {
   font-size: 15px;
   border: 1px solid gray;
-    width: 20%;
-    border-radius: 40px;
-    background-color: #ffffff;
-    text-align: center;
-    margin-top: 1%;
-    box-shadow: 5px 5px rgb(151, 151, 151);
+  width: 62%;
+  border-radius: 40px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 1%;
+  box-shadow: 5px 5px rgb(151, 151, 151);
 }
-.d-button button{
-  background-color: #EA4848;
+.d-units {
+  font-size: 15px;
+  border: 1px solid gray;
+  width: 20%;
+  border-radius: 40px;
+  background-color: #ffffff;
+  text-align: center;
+  margin-top: 1%;
+  box-shadow: 5px 5px rgb(151, 151, 151);
+}
+.d-button button {
+  background-color: #ea4848;
   color: white;
   border-radius: 40px;
   padding: 5.5% 19%;
@@ -79,8 +83,7 @@ hr{
   font-size: 23px;
   outline: none;
 }
-.d-button{
-  
+.d-button {
   border: 1px solid gray;
   width: 15%;
   border-radius: 40px;
