@@ -69,10 +69,10 @@ h1{
   } */
   @keyframes glow {
     from {
-      text-shadow: 0 0 10px #ffffff;
+      text-shadow: 0 0 5px #ff0000;
     }
     to {
-      text-shadow: 0 0 30px #ff0000, 0 0 10px #ff3300;
+      text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
     }
   }
   
@@ -127,7 +127,7 @@ h1{
 }
 
 .text-copy:nth-child(1){
-	stroke: #40476D;
+	stroke: #000000;
 	animation-delay: -1;
 }
 
@@ -137,22 +137,26 @@ h1{
 }
 
 .text-copy:nth-child(3){
-	stroke: #8B0000;
+	stroke: #000000;
 	animation-delay: -3s;
 }
 
 .text-copy:nth-child(4){
-	stroke: #1e2367;
+	stroke: #000000;
 	animation-delay: -4s;
 }
 
 .text-copy:nth-child(5){
-	stroke: #581d4b;
+	stroke: #000000;
 	animation-delay: -5s;
 }
 .text-copy:nth-child(6){
-	stroke: #FF0000;
+	stroke: #000000;
 	animation-delay: -6s;
+}
+.text-copy:nth-child(7){
+	stroke: #000000;
+	animation-delay: -7s;
 }
 
 @keyframes stroke-offset{

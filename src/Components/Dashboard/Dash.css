@@ -26,8 +26,6 @@
   background-color: #ea4848;
   text-align: center;
   box-shadow: 5px 5px rgb(151, 151, 151);
-  
-  
 }
 .dash-button1 button {
   background-color: #364652;
@@ -37,7 +35,7 @@
   margin: 3%;
   font-size: 35px;
   outline: none;
-  animation: glow1 1s ease-in-out infinite alternate;
+  /* animation: glow1 1s ease-in-out infinite alternate; */
 }
 .dash-button2 button {
   background-color: #364652;
@@ -47,7 +45,13 @@
   margin: 3%;
   font-size: 35px;
   outline: none;
-  animation: glow1 1s ease-in-out infinite alternate;
+  /* animation: glow1 1s ease-in-out infinite alternate; */
+}
+.dash-button2 button:hover {
+  color: #ff0000;
+}
+.dash-button1 button:hover {
+  color: #ff0000;
 }
 @keyframes glow1 {
   from {
