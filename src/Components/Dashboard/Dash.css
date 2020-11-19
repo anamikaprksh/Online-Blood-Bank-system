@@ -23,35 +23,37 @@
   margin-right: 34%;
   width: 32%;
   border-radius: 40px;
-  background-color: #ffffff;
+  background-color: #ea4848;
   text-align: center;
   box-shadow: 5px 5px rgb(151, 151, 151);
   
+  
 }
 .dash-button1 button {
-  background-color: #ea4848;
+  background-color: #364652;
   color: white;
   border-radius: 40px;
   padding: 3% 34%;
   margin: 3%;
   font-size: 35px;
   outline: none;
+  animation: glow1 1s ease-in-out infinite alternate;
 }
 .dash-button2 button {
-  background-color: #ea4848;
+  background-color: #364652;
   color: white;
   border-radius: 40px;
   padding: 3% 32%;
   margin: 3%;
   font-size: 35px;
   outline: none;
-  
+  animation: glow1 1s ease-in-out infinite alternate;
 }
-@keyframes glow {
+@keyframes glow1 {
   from {
-    text-shadow: 0 0 10px #ffffff;
+    text-shadow: 0 0 10px #000000;
   }
   to {
-    text-shadow: 0 0 30px #ff0000, 0 0 10px #ff3300;
+    text-shadow: 0 0 30px #ff0000, 0 0 10px #ff0000;
   }
 }

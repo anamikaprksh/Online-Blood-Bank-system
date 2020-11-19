@@ -6,7 +6,7 @@ import { Squash as Hamburger } from "hamburger-react";
 
 export default function SecHeader() {
   return (
-    <div style={{}}>
+    <div>
       <div className="main-head flexing">
         <div className="hamwrap">
           <div className="hamburger">

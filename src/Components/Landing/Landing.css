@@ -67,8 +67,17 @@ h1{
     display: inline-block;
     line-height: 1em;
   } */
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #ffffff;
+    }
+    to {
+      text-shadow: 0 0 30px #ff0000, 0 0 10px #ff3300;
+    }
+  }
   
-  @import url(https://fonts.googleapis.com/css?family=Montserrat);
+  
+  /* @import url(https://fonts.googleapis.com/css?family=Montserrat); */
 
 .blood{
     margin-top: 5%;
