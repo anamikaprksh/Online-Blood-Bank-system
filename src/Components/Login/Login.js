@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {Redirect} from 'react-router-dom'
 import "./Login.css";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
@@ -6,9 +7,10 @@ import { FaLock } from "react-icons/fa";
 import {Login} from '../../functions/user'
 
 
-export default function Log() {
+export default function Log(props) {
   const [username,setUsername]=useState("")
   const [password,setPassword]=useState("")
+  const [logStatus,setLogStatus]=useState(false)
 
   const handleUsername=(e)=>{
     setUsername(e.target.value)
@@ -24,11 +26,12 @@ export default function Log() {
     let result
     try{
        result=await Login(data);
-       console.log(data)
-       console.log(result)
+       localStorage.setItem('User_details',JSON.stringify(result))
+       localStorage.setItem('AUTH',true)
+       props.history.push('/dashboard')
     }
     catch(err){
-      console.log(err)
+      alert('Wrong username or password')
     }
   }
   return (

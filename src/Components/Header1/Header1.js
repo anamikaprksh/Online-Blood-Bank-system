@@ -4,7 +4,12 @@ import { elastic as Menu } from "react-burger-menu";
 import "./Header1.css";
 import { Squash as Hamburger } from "hamburger-react";
 
-export default function SecHeader() {
+export default function SecHeader(props) {
+  const handleLogout=()=>{
+    localStorage.removeItem('AUTH')
+    localStorage.removeItem('User_details')
+    props.history.push('/')
+  }
   return (
     <div>
       <div className="main-head flexing">
@@ -28,7 +33,7 @@ export default function SecHeader() {
           </Menu>
         </div>
         <div className="flexing hoab">
-            <a href="/"><div id="b-home">HOME</div></a>
+            <a href="/" onClick={handleLogout}><div id="b-home">LOGOUT</div></a>
             <a href="/"><div id="b-us">ABOUT US</div></a>
         </div>
       </div>
