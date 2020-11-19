@@ -10,10 +10,15 @@ export default function Log() {
   const loginFunction=async ()=>{
    const data={
       username:"nithin021",
-      password:"12345"
+      password:"123456"
     }
-    const result=await Login(data);
-    console.log(result)
+    let result
+    try{
+       result=await Login(data);
+    }
+    catch(err){
+      console.log(err)
+    }
   }
   loginFunction()
   return (

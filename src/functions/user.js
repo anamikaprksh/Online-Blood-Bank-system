@@ -1,15 +1,13 @@
 import Axios from "axios";
 
 export const Login = (data) => {
-  return new Promise((resolve, error) => {
+  return new Promise((resolve,reject) => {
     Axios.post("/login", data)
       .then((res) => {
-        console.log(res.data);
-        return resolve(res.data);
+        resolve(res.data);
       })
       .catch((err) => {
-          console.log(err)
-          return err
+        reject(err.response.data)
       });
   });
 };
