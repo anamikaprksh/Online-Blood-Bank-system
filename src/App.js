@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       {/* <HeaderPage></HeaderPage> */}
-      <Head2></Head2>
+      <Head2 style={{position:"fixed"}}></Head2>
       <Router>
         <LandingPage path="/"></LandingPage>
         <HeaderPage path="/header"></HeaderPage>

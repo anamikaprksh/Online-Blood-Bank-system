@@ -26,6 +26,7 @@ export default function Lands() {
             <use href="#s1-text" class="text-copy"></use>
             <use href="#s1-text" class="text-copy"></use>
             <use href="#s1-text" class="text-copy"></use>
+            <use href="#s1-text" class="text-copy"></use>
           </g>
         </svg>
       </div>
@@ -44,6 +45,7 @@ export default function Lands() {
             <use href="#s2-text" class="text-copy"></use>
             <use href="#s2-text" class="text-copy"></use>
             <use href="#s2-text" class="text-copy"></use>
+            <use href="#s2-text" class="text-copy"></use>
           </g>
         </svg>
       </div>
@@ -56,6 +58,7 @@ export default function Lands() {
           </symbol>
 
           <g class="g-ants">
+            <use href="#s3-text" class="text-copy"></use>
             <use href="#s3-text" class="text-copy"></use>
             <use href="#s3-text" class="text-copy"></use>
             <use href="#s3-text" class="text-copy"></use>
