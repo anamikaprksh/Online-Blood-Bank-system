@@ -15,6 +15,12 @@ import Log from "./Components/Login/Login";
 import Siup from "./Components/Signup/Signup";
 import NavbarPage from './Components/Header1/Header1'
 // import BuMe from './Components/BurgerMenu/App'
+import Axios from 'axios'
+
+
+Axios.defaults.baseURL='https://online-blood-bank-sys.herokuapp.com'
+
+
 function App() {
   return (
     <div>

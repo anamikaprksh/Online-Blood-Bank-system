@@ -2,7 +2,20 @@ import React from "react";
 import "./Login.css";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+
+import {Login} from '../../functions/user'
+
+
 export default function Log() {
+  const loginFunction=async ()=>{
+   const data={
+      username:"nithin021",
+      password:"12345"
+    }
+    const result=await Login(data);
+    console.log(result)
+  }
+  loginFunction()
   return (
     <div className="bgpic">
       <h1 style={{ textAlign: "center" }} className="head-login">Login</h1>
