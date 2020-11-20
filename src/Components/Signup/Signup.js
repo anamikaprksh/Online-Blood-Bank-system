@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Signup.css";
+import {} from "./Signup";
 import { FaBeer } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
@@ -30,24 +31,25 @@ export default function Siup(props) {
       blood,
       lastDate,
     };
-    console.log(data);
-    // try{
-    //   result = await Signup(data)
-    //   localStorage.setItem('AUTH',true)
-    //   localStorage.setItem('User_details',JSON.stringify(result))
-    //   props.history.push('/dashboard')
 
-    // }
-    // catch(err){
-    //   console.log(err)
-    //   const {err:{code}}=err
-    //   if (code ==='23505'){
-    //     alert('The username already exist')
-    //   }
-    //   else{
-    //     alert('Something went wrong')
-    //   }
-    // }
+    console.log(data);
+
+    try {
+      result = await Signup(data);
+      localStorage.setItem("AUTH", true);
+      localStorage.setItem("User_details", JSON.stringify(result));
+      props.history.push("/dashboard");
+    } catch (err) {
+      console.log(err);
+      const {
+        err: { code },
+      } = err;
+      if (code === "23505") {
+        alert("The username already exist");
+      } else {
+        alert("Something went wrong");
+      }
+    }
   };
 
   return (
@@ -76,12 +78,19 @@ export default function Siup(props) {
             ></input>
           </h3>
           <h3 className="big">
-            <span>
-              {" "}
-              <FaBeer />{" "}
-            </span>
-            <div className='date'>
-              <DatePicker placeholderText="DOB" />
+            <div className="date">
+              <span className="innerSpan">
+                {" "}
+                <FaBeer />{" "}
+              </span>
+              <DatePicker
+                placeholderText="DOB"
+                className="date"
+                selected={dob}
+                onChange={(date) => setDob(date)}
+                dateFormat='yyyy-MM-dd'
+                maxDate={new Date()}
+              />
             </div>
           </h3>
           <h3 className="big">
@@ -129,14 +138,20 @@ export default function Siup(props) {
             ></input>
           </h3>
           <h3 className="big">
-            <span>
-              {" "}
-              <FaBeer />{" "}
-            </span>
-            <input
-              placeholder="last donation date"
-              onChange={(e) => setLastDate(e.target.value)}
-            ></input>
+          <div className="date">
+              <span className="innerSpan">
+                {" "}
+                <FaBeer />{" "}
+              </span>
+              <DatePicker
+                placeholderText="last donation date"
+                className="date"
+                selected={lastDate}
+                onChange={(date) =>setLastDate(date)}
+                dateFormat='yyyy-MM-dd'
+                maxDate={new Date()}
+              />
+            </div>
           </h3>
         </div>
       </div>
