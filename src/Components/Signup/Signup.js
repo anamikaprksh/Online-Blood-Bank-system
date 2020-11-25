@@ -128,7 +128,7 @@ export default function Siup(props) {
             ></input>
           </h3>
           <h3 className="big">
-            <span>
+            <span className='innerSpan'>
               {" "}
               <FaBeer />{" "}
             </span>
