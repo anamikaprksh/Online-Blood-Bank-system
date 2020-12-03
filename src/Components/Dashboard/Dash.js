@@ -1,5 +1,6 @@
 import React from "react";
 import "./Dash.css";
+import Button from '@material-ui/core/Button';
 export default function DashB() {
   return (
     <div className="dash-bg-img">

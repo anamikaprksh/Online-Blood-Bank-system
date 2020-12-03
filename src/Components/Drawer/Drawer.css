@@ -1,0 +1,14 @@
+.d-menu{
+    text-align: center;
+    padding-left: 5%;
+}
+.dd-menu{
+    background-color: #364652;
+    color: white;
+    text-align: center;
+    /* outline: solid 1px white; */
+}
+.open-draw{
+    text-align: center;
+    margin-bottom: 15%;
+}

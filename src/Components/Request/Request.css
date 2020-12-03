@@ -1,12 +1,14 @@
-.bg-img {
+ .bg-img {
   background-image: url(../static/bg_heading.svg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 87vh;
+  height: 89.5vh;
+  overflow: hidden;
 }
 .req {
   text-align: center;
+  margin-top: 5%;
 }
 .req h1 {
   font-size: 50px;
@@ -14,13 +16,13 @@
 .reqes-input {
   text-align: center;
 }
-.reqes-input input {
+/* .reqes-input input {
   padding: 1%;
   margin-top: 3%;
   font-size: 20px;
   width: 27%;
   /* background-size: ; */
-}
+
 .req-button {
   border: 1px solid gray;
   margin-left: 42%;
@@ -40,4 +42,15 @@
   margin: 4%;
   font-size: 23px;
   outline: none;
+}
+.datepick{
+  text-align: center;
+  margin-top: 2%;
+}
+.date1{
+  padding: 5%;
+  margin-top: 3%;
+  font-size: 17px;
+  width: 90%;
+  
 }

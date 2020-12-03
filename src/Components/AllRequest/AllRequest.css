@@ -1,12 +1,12 @@
 .bk-img {
-  background-image: url(../static/gp_2.svg);
+  /* background-image: url(../static/gp_2.svg); */
 
-  width: 100%;
-
-  min-height: 100%;
+  /* width: 100%;
+  min-height: 89vh;
   position: absolute;
   background-repeat: repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; */
+  /* overflow: hidden; */
 }
 .flexing {
   display: flex;
@@ -29,6 +29,8 @@ hr {
 }
 .mar {
   margin-top: 2%;
+  
+  
 }
 .a-req {
   border: 1px solid gray;
@@ -38,22 +40,25 @@ hr {
   text-align: center;
   margin-top: 1%;
   box-shadow: 5px 5px rgb(151, 151, 151);
+  
+  /* padding-left: 5%; */
 }
 .a-button button {
   background-color: #ea4848;
   color: white;
   border-radius: 40px;
-  padding: 3% 26%;
-  margin-top: 5.5%;
+  padding: 1vh 6.5vh;
+  /* margin-top: 9px; */
   font-size: 23px;
   outline: none;
 }
 .a-button {
   border: 1px solid gray;
-  width: 18%;
+  width: 26vh;
   border-radius: 40px;
   background-color: #ffffff;
   text-align: center;
   margin-top: 1%;
   box-shadow: 5px 5px rgb(151, 151, 151);
+  
 }

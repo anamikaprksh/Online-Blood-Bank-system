@@ -15,13 +15,29 @@ import MoMo from "./Components/MoreMore/MoreMore";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
 import NavbarPage from './Components/Header1/Header1'
+import TemporaryDrawer from './Components/Drawer/Drawer'
 // import BuMe from './Components/BurgerMenu/App'
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import Axios from 'axios'
 import ProtectedRoute from './Components/ProtectedRoute/protectedRoute'
 import NotSecureRoute from './Components/ProtectedRoute/noSecureRoute'
 
 Axios.defaults.baseURL='https://online-blood-bank-sys.herokuapp.com'
 
+const Theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#364652",
+    },
+    secondary: {
+      main: "#364652",
+    },
+    action:{
+      main:"#00FF00"
+    },
+  },
+});
 
 function App() {
   return (
@@ -37,6 +53,7 @@ function App() {
         <MB path="/more"></MB>
         <MM path="/moremore"></MM>
         <Head2 path='/mHeader'></Head2>
+        <Draw path='/drawer'></Draw>
         {/* <Burger path='/mHeader'></Burger> */}
       </Router>
       {/* <FooterPage></FooterPage> */}
@@ -78,6 +95,9 @@ function MM() {
 
 function Head2(){
   return <NavbarPage></NavbarPage>
+}
+function Draw(){
+  return <TemporaryDrawer></TemporaryDrawer>
 }
 // function Burger(){
 //   return <BuMe></BuMe>
