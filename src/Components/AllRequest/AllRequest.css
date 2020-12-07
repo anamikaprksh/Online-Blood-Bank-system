@@ -9,7 +9,7 @@
   /* overflow: hidden; */
 }
 .flexing {
-  display: flex;
+  display: flex;  
   justify-content: space-between;
 }
 .outer {
@@ -34,11 +34,11 @@ hr {
 }
 .a-req {
   border: 1px solid gray;
-  width: 80%;
+  width: 100%;
   border-radius: 40px;
   background-color: #ffffff;
   text-align: center;
-  margin-top: 1%;
+  margin-bottom: 1%;
   box-shadow: 5px 5px rgb(151, 151, 151);
   
   /* padding-left: 5%; */
@@ -48,7 +48,7 @@ hr {
   color: white;
   border-radius: 40px;
   padding: 1vh 6.5vh;
-  /* margin-top: 9px; */
+  margin-top: 9px;
   font-size: 23px;
   outline: none;
 }
@@ -61,4 +61,13 @@ hr {
   margin-top: 1%;
   box-shadow: 5px 5px rgb(151, 151, 151);
   
+}
+.hcolor{
+  font-size: 22px;
+  width: 20%;
+  text-align: center;
+  margin-top: 3%;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  color: rgb(0, 0, 107);
 }

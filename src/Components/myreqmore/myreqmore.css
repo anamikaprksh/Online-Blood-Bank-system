@@ -1,0 +1,31 @@
+.flexing3{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+.outer2{
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+.mreq-head{
+    text-align: center;
+}
+
+hr{
+    background-color: #EA4848;
+    height: 2px;
+}
+
+.myreq-details{
+    border: 1px solid gray;
+    width: 48%;
+    border-radius: 35px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 1%;
+    box-shadow: 3px 3px rgb(151, 151, 151);
+}
+.myreq-details h3{
+    color: #e40000;
+}

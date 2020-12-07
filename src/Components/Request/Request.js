@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Request } from "../../functions/user";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from '@material-ui/core/styles';
-
+import Loading from '../Animation/Animation.js'
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -61,9 +61,12 @@ export default function Requests() {
 
   return (
     <div className="bg-img">
+      
       <div className="req">
         <h1>REQUEST</h1>
       </div>
+      {/* <img src="images/bg_heading.svg"></img> */}
+      
       <div className="reqes-input">
         <div>
           <TextField id="outlined-basic" label="Blood Group" onChange={(e)=>setBloodgroup(e.target.value)} variant="outlined" className={classes.textfield}/>

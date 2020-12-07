@@ -22,7 +22,8 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import Axios from 'axios'
 import ProtectedRoute from './Components/ProtectedRoute/protectedRoute'
 import NotSecureRoute from './Components/ProtectedRoute/noSecureRoute'
-
+import Mymorerequest from './Components/myreqmore/myreqmore'
+import Mymore from "./Components/myreqmore/myreqmore";
 Axios.defaults.baseURL='https://online-blood-bank-sys.herokuapp.com'
 
 const Theme = createMuiTheme({
@@ -54,6 +55,7 @@ function App() {
         <MM path="/moremore"></MM>
         <Head2 path='/mHeader'></Head2>
         <Draw path='/drawer'></Draw>
+        <MyMoreReq path='/myrequestmore'></MyMoreReq>
         {/* <Burger path='/mHeader'></Burger> */}
       </Router>
       {/* <FooterPage></FooterPage> */}
@@ -98,6 +100,9 @@ function Head2(){
 }
 function Draw(){
   return <TemporaryDrawer></TemporaryDrawer>
+}
+function MyMoreReq(){
+  return <Mymore></Mymore>
 }
 // function Burger(){
 //   return <BuMe></BuMe>

@@ -6,10 +6,10 @@ export default function DashB() {
     <div className="dash-bg-img">
       <div><hr></hr></div>
       <div className="dash-button1">
-        <button>Donate</button>
+        <a href="/donate"><button>Donate</button></a>
       </div>
       <div className="dash-button2">
-        <button>Request</button>
+        <a href="/request"><button onClick="">Request</button></a>
       </div>
       <div><hr></hr></div>
     </div>
