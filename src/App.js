@@ -39,8 +39,6 @@ const Theme = createMuiTheme({
     },
   },
 });
-const a;
-console.log(a)
 function App() {
   return (
     <div>
