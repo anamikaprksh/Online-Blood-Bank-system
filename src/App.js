@@ -14,9 +14,8 @@ import MoreButton from "./Components/More/More";
 import MoMo from "./Components/MoreMore/MoreMore";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
-import NavbarPage from './Components/Header1/Header1'
-import TemporaryDrawer from './Components/Drawer/Drawer'
-// import BuMe from './Components/BurgerMenu/App'
+import NavbarPage from './Components/Header1/Header1';
+import TemporaryDrawer from './Components/Drawer/Drawer';
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import Axios from 'axios'
