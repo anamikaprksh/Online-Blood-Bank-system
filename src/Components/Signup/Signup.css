@@ -11,18 +11,17 @@
 .out {
   display: flex;
   justify-content: space-between;
-  /* padding: 5% 10%; */
-  /* padding-left: 5%;
-  padding-right: 5%; */
+  padding: 5% 10%;
+ 
   border: solid rgb(179, 173, 173);
   border-radius: 35px;
   box-shadow: 5px 5px grey;
   background-color: white;
   width: 30%;
   text-align: center;
-  /* align-content: center; */
+ 
   margin-left: 25%;
-  /* margin-top: 7%; */
+ 
 }
 .sign-button {
   border: 1px solid gray;

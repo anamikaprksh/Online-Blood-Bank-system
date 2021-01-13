@@ -24,6 +24,7 @@ import ProtectedRoute from './Components/ProtectedRoute/protectedRoute'
 import NotSecureRoute from './Components/ProtectedRoute/noSecureRoute'
 import UserUpdate from './Components/Update/Update'
 import Mymore from "./Components/myreqmore/myreqmore";
+import WillingTable from "./Components/Willingness/Willingness";
 Axios.defaults.baseURL='https://online-blood-bank-sys.herokuapp.com'
 
 const Theme = createMuiTheme({
@@ -58,6 +59,7 @@ function App() {
         <Draw path='/drawer'></Draw>
         <MyMoreReq path='/myrequestmore'></MyMoreReq>
         <MyUserUpdate path='/update'></MyUserUpdate>
+        <MyWillingT path='/willingness'></MyWillingT>
         {/* <Burger path='/mHeader'></Burger> */}
       </Router>
       {/* <FooterPage></FooterPage> */}
@@ -108,6 +110,9 @@ function MyMoreReq(){
 }
 function MyUserUpdate(){
   return <UserUpdate></UserUpdate>
+}
+function MyWillingT(){
+  return <WillingTable></WillingTable>
 }
 
 export default App;

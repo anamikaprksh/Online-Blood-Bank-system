@@ -78,7 +78,7 @@ export default function UserUpdate(props) {
     <div className="ba-image">
       <div className="outer">
         <div className="p-head">
-          <h1>Details</h1>
+          <h1>Update Details</h1>
         </div>
         <div>
           <hr></hr>
