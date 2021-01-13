@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar(props) {
   const [showHide, setShowHide] = useState(false);
-  const [check,setCheck]=useState(null)
+  const [check,setCheck]=useState('')
   
   const classes = useStyles();
   const handlelogOut = () => {
@@ -60,17 +60,19 @@ export default function ButtonAppBar(props) {
     localStorage.removeItem("AUTH");
   };
   useEffect(() => {
-    setCheck(localStorage.getItem("AUTH"))
-    check ? setShowHide(true) : setShowHide(false);
+    const flag=localStorage.getItem("AUTH")
+    flag ? setShowHide(true) : setShowHide(false);
     console.log(showHide);
   },[]);
+    
+    
   return (
     <div className={classes.root} style={{ marginBottom: "75px" }}>
       <MuiThemeProvider theme={Theme}>
         <AppBar position="fixed">
           <Toolbar variant="dense">
-            <div className={classes.draw}>
-              <TemporaryDrawer></TemporaryDrawer>
+           <div className={classes.draw}>
+           {showHide && (<TemporaryDrawer></TemporaryDrawer>)}
             </div>
             <Typography variant="h6" className={classes.title}>
               Blood Bank Drive

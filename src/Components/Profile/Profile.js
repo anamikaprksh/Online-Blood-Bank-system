@@ -1,9 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { Details } from "../../functions/user";
 import "./Profile.css";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from '@material-ui/core/Button';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+  text: {
+    marginTop: "1%",
+    width: "100%",
+  },
+  buttonDiv:{
+    textAlign:"center",
+    marginTop:"2%"
+  },
+  button:{
+    color:"white",
+    backgroundColor:"#ea4848",
+    width:"20%",
+    paddingTop:"1%",
+    // fontSize:"15px"
+  },
+}));
+
 export default function UserProfile() {
   const [detls, setDetls] = useState({});
-
+  const classes = useStyles();
   let udetails = JSON.parse(localStorage.getItem("User_details"));
   
   useEffect(() => {
@@ -104,6 +131,13 @@ export default function UserProfile() {
             </div>
           </div>
         </div>
+        
+        <div className={classes.buttonDiv}>
+      <Button variant="contained" className={classes.button} href="/update">
+        Update
+      </Button>
+      </div>
+
       </div>
     </div>
   );
