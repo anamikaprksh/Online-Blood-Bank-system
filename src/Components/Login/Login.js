@@ -70,6 +70,7 @@ export default function Log(props) {
             id="outlined-basic"
             label="Password"
             variant="outlined"
+            type='password'
             onChange={handlePassword}
             className={classes.text}
           />

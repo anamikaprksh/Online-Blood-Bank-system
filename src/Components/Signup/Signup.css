@@ -12,7 +12,12 @@
   display: flex;
   justify-content: space-between;
   padding: 5% 10%;
+<<<<<<< HEAD
  
+=======
+  /* padding-left: 5%;
+  padding-right: 5%; */
+>>>>>>> 48b5332aac455650f971e55ecae5a79ce2d71eea
   border: solid rgb(179, 173, 173);
   border-radius: 35px;
   box-shadow: 5px 5px grey;
