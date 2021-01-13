@@ -11,7 +11,7 @@
 .out {
   display: flex;
   justify-content: space-between;
-  /* padding: 5% 10%; */
+  padding: 5% 10%;
   /* padding-left: 5%;
   padding-right: 5%; */
   border: solid rgb(179, 173, 173);

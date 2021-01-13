@@ -8,7 +8,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import TemporaryDrawer from "../Drawer/Drawer";
 import Dialog from '../Dialog/dialog'
-import { PinDropSharp } from "@material-ui/icons";
+import { Spin as Hamburger } from "hamburger-react";
 
 const Theme = createMuiTheme({
   palette: {
