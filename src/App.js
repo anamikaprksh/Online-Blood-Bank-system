@@ -2,7 +2,7 @@ import React from "react";
 import { Router } from "@reach/router";
 import {Route,Switch} from 'react-router-dom'
 import "./App.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 import LandingPage from "./Components/Landing/Landing";
 import Head from "./Components/Header/Header";
 import Dashboard from "./Components/Dashboard/Dash";
@@ -16,13 +16,13 @@ import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
 import NavbarPage from './Components/Header1/Header1'
 import TemporaryDrawer from './Components/Drawer/Drawer'
-// import BuMe from './Components/BurgerMenu/App'
+import Head3 from './Components/Header3/Header3'
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import Axios from 'axios'
 import ProtectedRoute from './Components/ProtectedRoute/protectedRoute'
 import NotSecureRoute from './Components/ProtectedRoute/noSecureRoute'
-import Mymorerequest from './Components/myreqmore/myreqmore'
+
 import Mymore from "./Components/myreqmore/myreqmore";
 Axios.defaults.baseURL='https://online-blood-bank-sys.herokuapp.com'
 
@@ -56,6 +56,7 @@ function App() {
         <Head2 path='/mHeader'></Head2>
         <Draw path='/drawer'></Draw>
         <MyMoreReq path='/myrequestmore'></MyMoreReq>
+        <Header3 path='header3'></Header3>
         {/* <Burger path='/mHeader'></Burger> */}
       </Router>
       {/* <FooterPage></FooterPage> */}
@@ -103,6 +104,9 @@ function Draw(){
 }
 function MyMoreReq(){
   return <Mymore></Mymore>
+}
+function Header3(){
+  return <Head3></Head3>
 }
 // function Burger(){
 //   return <BuMe></BuMe>

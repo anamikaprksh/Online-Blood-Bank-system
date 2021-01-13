@@ -49,7 +49,7 @@ export default function AllReq() {
             <hr></hr>
           </div>
         </div>
-        
+
         <div>
           <div className="flexing">
             <h2 className="hcolor">Request ID</h2>
@@ -59,7 +59,9 @@ export default function AllReq() {
             <h2 className="hcolor">Solved</h2>
           </div>
         </div>
-        <div style={{ textAlign: "center",marginTop:"2%" }}>{load && <Loading></Loading>}</div>
+        <div style={{ textAlign: "center", marginTop: "2%" }}>
+          {load && <Loading></Loading>}
+        </div>
         {fresult.map((eachr) => (
           <div className="flexing mar">
             <div className="a-req flexing">
