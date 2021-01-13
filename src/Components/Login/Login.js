@@ -1,11 +1,15 @@
 import React,{useState} from "react";
 import {Redirect} from 'react-router-dom'
 import "./Login.css";
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt, FaWindows } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-
+import {Dashboard} from '../Dashboard/Dash'
 import {Login} from '../../functions/user'
 
+
+const functionToRedirect=(props)=>{
+  return <Redirect to='/dashboard' state={true}></Redirect>
+}
 
 export default function Log(props) {
   const [username,setUsername]=useState("")
@@ -28,7 +32,9 @@ export default function Log(props) {
        result=await Login(data);
        localStorage.setItem('User_details',JSON.stringify(result))
        localStorage.setItem('AUTH',true)
-       props.history.push('/dashboard')
+       window.location.href='/dashboard'
+       window.location.reload()
+
     }
     catch(err){
       alert('Wrong username or password')
@@ -36,6 +42,7 @@ export default function Log(props) {
   }
   return (
     <div className="bgpic">
+      {logStatus && functionToRedirect()}
       <h1 style={{ textAlign: "center" }} className="head-login">Login</h1>
       <div className="out">
         <div className='inside'>

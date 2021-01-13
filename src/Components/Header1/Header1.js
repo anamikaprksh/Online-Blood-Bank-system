@@ -52,18 +52,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar(props) {
   const [showHide, setShowHide] = useState(false);
-  const [check,setCheck]=useState(null)
-  
   const classes = useStyles();
   const handlelogOut = () => {
     localStorage.removeItem("User_details");
     localStorage.removeItem("AUTH");
+    window.location.reload()
   };
-  useEffect(() => {
-    setCheck(localStorage.getItem("AUTH"))
-    check ? setShowHide(true) : setShowHide(false);
-    console.log(showHide);
-  },[]);
+  useEffect(()=>{
+    const flag=JSON.parse(localStorage.getItem('AUTH'))
+    flag?setShowHide(true):setShowHide(false)
+  },[])
   return (
     <div className={classes.root} style={{ marginBottom: "75px" }}>
       <MuiThemeProvider theme={Theme}>
