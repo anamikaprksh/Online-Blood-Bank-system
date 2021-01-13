@@ -7,7 +7,8 @@ import Button from "@material-ui/core/Button";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import TemporaryDrawer from "../Drawer/Drawer";
-import { Squash as Hamburger } from "hamburger-react";
+import Dialog from '../Dialog/dialog'
+import { PinDropSharp } from "@material-ui/icons";
 
 const Theme = createMuiTheme({
   palette: {
@@ -55,19 +56,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar(props) {
   const [showHide, setShowHide] = useState(false);
+  const [dialog,setDialog]=useState()
   const classes = useStyles();
-  const handlelogOut = () => {
-    alert("Logging Out");
-    localStorage.removeItem("User_details");
-    localStorage.removeItem("AUTH");
-    window.location.reload()
-  };
   useEffect(()=>{
     const flag=JSON.parse(localStorage.getItem('AUTH'))
     flag?setShowHide(true):setShowHide(false)
-  },[])
+  },[dialog])
   return (
     <div className={classes.root} style={{ marginBottom: "75px" }}>
+      {dialog && <Dialog state={true} func={setDialog}/>}
       <MuiThemeProvider theme={Theme}>
         <AppBar position="fixed">
           <Toolbar variant="dense">
@@ -79,13 +76,10 @@ export default function ButtonAppBar(props) {
               Blood Bank Drive
             </Typography>
             {showHide && (
-              <a href="/" className={classes.col}>
-                <Button color="inherit" onClick={handlelogOut}>
+                <Button color="inherit" onClick={()=>setDialog(true)}>
                   Logout
     
                 </Button>
-                
-              </a>
             )}
             {!showHide && (
               <a href="/signup" className={classes.textdnone}>
