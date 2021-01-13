@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { Router } from "@reach/router";
 import {Route,Switch} from 'react-router-dom'
 import "./App.css";
@@ -14,8 +14,9 @@ import MoreButton from "./Components/More/More";
 import MoMo from "./Components/MoreMore/MoreMore";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
-import NavbarPage from './Components/Header1/Header1';
-import TemporaryDrawer from './Components/Drawer/Drawer';
+import NavbarPage from './Components/Header1/Header1'
+import TemporaryDrawer from './Components/Drawer/Drawer'
+import Head3 from './Components/Header3/Header3'
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import Axios from 'axios'
@@ -43,7 +44,8 @@ function App() {
   return (
     <div>
       {/* <HeaderPage></HeaderPage> */}
-      <Head2 style={{position:"fixed"}}></Head2>
+      {/* <Head2 style={{position:"fixed"}}></Head2> */}
+      <NavbarPage/>
       <Router>
         <HeaderPage path="/header"></HeaderPage>
         <RQ path="/request"></RQ>

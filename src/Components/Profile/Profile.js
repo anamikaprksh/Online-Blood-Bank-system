@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
   button:{
     color:"white",
     backgroundColor:"#ea4848",
-    width:"20%",
-    paddingTop:"1%",
-    // fontSize:"15px"
+    width:"25%",
+    paddingTop:"1.5%",
+    // fontSize:"25px"
   },
 }));
 

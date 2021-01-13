@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import TemporaryDrawer from "../Drawer/Drawer";
-import { PinDropSharp } from "@material-ui/icons";
+import { Squash as Hamburger } from "hamburger-react";
 
 const Theme = createMuiTheme({
   palette: {
@@ -48,24 +48,24 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "2%",
     paddingRight: "2%",
   },
+  ham:{
+    margin:'5%'
+  },
 }));
 
 export default function ButtonAppBar(props) {
   const [showHide, setShowHide] = useState(false);
-  const [check,setCheck]=useState('')
-  
   const classes = useStyles();
   const handlelogOut = () => {
+    alert("Logging Out");
     localStorage.removeItem("User_details");
     localStorage.removeItem("AUTH");
+    window.location.reload()
   };
-  useEffect(() => {
-    const flag=localStorage.getItem("AUTH")
-    flag ? setShowHide(true) : setShowHide(false);
-    console.log(showHide);
-  },[]);
-    
-    
+  useEffect(()=>{
+    const flag=JSON.parse(localStorage.getItem('AUTH'))
+    flag?setShowHide(true):setShowHide(false)
+  },[])
   return (
     <div className={classes.root} style={{ marginBottom: "75px" }}>
       <MuiThemeProvider theme={Theme}>
@@ -73,6 +73,7 @@ export default function ButtonAppBar(props) {
           <Toolbar variant="dense">
            <div className={classes.draw}>
            {showHide && (<TemporaryDrawer></TemporaryDrawer>)}
+           {!showHide && (<div className={classes.ham}><Hamburger></Hamburger></div>)}
             </div>
             <Typography variant="h6" className={classes.title}>
               Blood Bank Drive
@@ -81,11 +82,13 @@ export default function ButtonAppBar(props) {
               <a href="/" className={classes.col}>
                 <Button color="inherit" onClick={handlelogOut}>
                   Logout
+    
                 </Button>
+                
               </a>
             )}
             {!showHide && (
-              <a href="/register" className={classes.textdnone}>
+              <a href="/signup" className={classes.textdnone}>
                 <Button color="inherit">Register</Button>
               </a>
             )}
@@ -96,7 +99,7 @@ export default function ButtonAppBar(props) {
             )}
             {!showHide && (
               <a href="/" className={classes.textdnone}>
-                <Button color="inherit">AboutUs</Button>
+                <Button color="inherit">Home</Button>
               </a>
             )}
           </Toolbar>

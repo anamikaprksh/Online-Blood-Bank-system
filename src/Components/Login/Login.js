@@ -1,58 +1,79 @@
-import React,{useState} from "react";
-import {Redirect} from 'react-router-dom'
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import "./Login.css";
-import { FaUserAlt } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
+import { Login } from "../../functions/user";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
-import {Login} from '../../functions/user'
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+  text: {
+    width: "100%",
+    marginTop: "5%",
+  },
+}));
 
+const functionToRedirect = (props) => {
+  return <Redirect to="/dashboard" state={true}></Redirect>;
+};
 
 export default function Log(props) {
-  const [username,setUsername]=useState("")
-  const [password,setPassword]=useState("")
-  const [logStatus,setLogStatus]=useState(false)
+  const classes = useStyles();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [logStatus, setLogStatus] = useState(false);
 
-  const handleUsername=(e)=>{
-    setUsername(e.target.value)
-  }
-  const handlePassword=(e)=>{
-    setPassword(e.target.value)
-  }
-  const handleLogin=async ()=>{
-   const data={
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleLogin = async () => {
+    const data = {
       username,
-      password
+      password,
+    };
+    let result;
+    try {
+      result = await Login(data);
+      localStorage.setItem("User_details", JSON.stringify(result));
+      localStorage.setItem("AUTH", true);
+      window.location.href = "/dashboard";
+      window.location.reload();
+    } catch (err) {
+      alert("Wrong username or password");
     }
-    let result
-    try{
-       result=await Login(data);
-       localStorage.setItem('User_details',JSON.stringify(result))
-       localStorage.setItem('AUTH',true)
-       props.history.push('/dashboard')
-    }
-    catch(err){
-      alert('Wrong username or password')
-    }
-  }
+  };
   return (
     <div className="bgpic">
-      <h1 style={{ textAlign: "center" }} className="head-login">Login</h1>
+      {logStatus && functionToRedirect()}
+      <h1 style={{ textAlign: "center" }} className="head-login">
+        Login
+      </h1>
       <div className="out">
-        <div className='inside'>
-          <h3 className="big">
-            <span>
-              {" "}
-              <FaUserAlt />{" "}
-            </span>
-            <input placeholder="Username" onChange={handleUsername}></input>
-          </h3>
-          <h3 className="big">
-            <span>
-              {" "}
-              <FaLock />{" "}
-            </span>
-            <input placeholder="Password" onChange={handlePassword} type='password'></input>
-          </h3>
+        <div className="inside">
+          <TextField
+            id="outlined-basic"
+            label="Username"
+            variant="outlined"
+            onChange={handleUsername}
+            className={classes.text}
+          />
+
+          <TextField
+            id="outlined-basic"
+            label="Password"
+            variant="outlined"
+            onChange={handlePassword}
+            className={classes.text}
+          />
+
           <p>Forgot password?</p>
         </div>
       </div>
