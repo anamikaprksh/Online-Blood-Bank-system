@@ -11,7 +11,7 @@ import {cancelRequest} from "../../functions/user";
 import DialogPopUp from './dialogPopUp'
 import Loading from "../LoadingAnimation/loading";
 import { Row } from "@material-ui/data-grid";
-
+import SnackBar from "../SnackBar/SnackBar";
 const useStyles = makeStyles({
   table: {
     maxWidth: 600,
@@ -37,6 +37,9 @@ export default function BasicTable(props) {
   const [disableDelete,setDisableDelete]=useState(false)
   const [enableDetails,setEnableDetails]=useState(false)
   const [loading, setLoading] = useState(false);
+  const [snack, setSnack] = useState(false);
+  const [succerr, setSuccerr] = useState("");
+  const [descri, setDescri] = useState("");
   const handleDetails =() => {
     setEnableDetails(true)
   };
@@ -47,12 +50,20 @@ export default function BasicTable(props) {
       setLoading(true)
       try{
         const result=await cancelRequest({request_id})
+        setSnack(true)
+        setSuccerr("success")
+        setDescri("Deleted successfully!");
         setDisableDelete(true)  
       }
       catch(err){
         console.log(err)
       }
       setLoading(false)
+    }
+    else{
+      setSnack(true)
+      setSuccerr("error")
+        setDescri("Cancelled!");
     }
   };
   useEffect(()=>{
@@ -114,6 +125,14 @@ export default function BasicTable(props) {
           Delete  
         </Button>
       </div>
+      {snack && (
+        <SnackBar
+          con={succerr}
+          stat={snack}
+          fun={setSnack}
+          desc={descri}
+        ></SnackBar>
+      )}
     </TableContainer>
   );
 }

@@ -196,3 +196,15 @@ export const deselectDonor = (data) => {
       });
   });
 };
+
+export const upcomingdonation = (data) => {
+  return new Promise((resolve, reject) => {
+    Axios.post("/donor/upcomming_donations", data)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
+};

@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { unSolvedRequest } from "../../functions/user";
 import UnSolvedCard from "./unsolvedRequestCard";
+import Animation from "../Animation/Animation";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,10 +22,13 @@ const useStyles = makeStyles((theme) => ({
 export default function AutoGrid() {
   const classes = useStyles();
   const [data, setData] = useState([]);
+  const [loadanim, setLoadanim] = useState(false);
   const handleGenarateSolvedRequest = async () => {
     const { username } = JSON.parse(localStorage.getItem("User_details"));
     try {
+      setLoadanim(true)
       const result = await unSolvedRequest({ username });
+      setLoadanim(false)
       setData(result);
       console.log(result)
     } catch (err) {
@@ -36,6 +40,9 @@ export default function AutoGrid() {
   },[])
   return (
     <div className={classes.root}>
+       <div style={{ textAlign: "center" }}>
+        {loadanim && <Animation></Animation>}
+      </div>
       <Grid container spacing={3} className={classes.grid}>
         {data.map((e) => {
           return (

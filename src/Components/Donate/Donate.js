@@ -6,6 +6,7 @@ import DetailsCard from "../DetailsCard/detailsCard";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from "../Animation/Animation";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
