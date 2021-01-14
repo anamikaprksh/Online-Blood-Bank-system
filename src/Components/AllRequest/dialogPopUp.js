@@ -15,15 +15,18 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    position: "relative",
+    position: "fixed",
   },
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
   },
   bodytitle:{
-      marginTop:30,
+      marginTop:100,
       marginLeft:20
+  },
+  grid:{
+    margin:20
   }
 }));
 
@@ -82,7 +85,7 @@ export default function FullScreenDialog(props) {
         <Typography variant="h4" className={classes.bodytitle}>
           List of users who are ready to donate.
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} className={classes.grid}> 
             {
                 data.map((e)=>{
                     return(

@@ -8,7 +8,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import { selectDonor, deselectDonor } from "../../functions/user";
-import DialogPopUp from "./dialogPopUp";
 import Loading from "../LoadingAnimation/loading";
 
 const useStyles = makeStyles({
@@ -16,18 +15,17 @@ const useStyles = makeStyles({
     maxWidth: 600,
   },
   paper: {
-    maxWidth: 600,
+    maxWidth: 500,
     marginBottom: 50,
   },
   button: {
     marginTop: 30,
     marginBottom: 30,
-    marginRight: 20,
-    marginLeft: 20,
   },
   buttonDiv: {
     textAlign: "center",
   },
+
 });
 
 export default function BasicTable(props) {
@@ -36,6 +34,7 @@ export default function BasicTable(props) {
   const [selected, setSelected] = useState(props.rows.selected);
   const [loading, setLoading] = useState(false);
   const handleSelect = async () => {
+    setLoading(true)
     const { username } = JSON.parse(localStorage.getItem("User_details"));
     try {
     console.log({username,request_id:props.requestId})
@@ -48,8 +47,10 @@ export default function BasicTable(props) {
     } catch (err) {
       console.log(err);
     }
+    setLoading(false)
   };
   const handleDeselect = async () => {
+    setLoading(true)
     try {
       const result = await deselectDonor({
         username:row.username,
@@ -59,6 +60,7 @@ export default function BasicTable(props) {
     } catch (err) {
       console.log(err);
     }
+    setLoading(false)
   };
   return (
     <TableContainer component={Paper} className={classes.paper}>
