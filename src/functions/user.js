@@ -117,6 +117,9 @@ export const solvedRequest = (data) => {
   return new Promise((resolve, reject) => {
     const {username}=data;
     Axios.get(`request/resolved/${username}`)
+export const MyDonationapi = (data) => {
+  return new Promise((resolve, reject) => {
+    Axios.post("/donor/past_donations",data)
       .then((res) => {
         resolve(res.data);
       })
@@ -186,3 +189,4 @@ export const deselectDonor=(data)=>{
       });
   });
 }
+};
