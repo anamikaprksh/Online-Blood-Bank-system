@@ -9,16 +9,16 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import { showWilling, cancelWilling } from "../../functions/user";
 import Loading from "../LoadingAnimation/loading";
+import SnackBar from "../SnackBar/SnackBar";
 
 const useStyles = makeStyles({
   table: {
-    maxWidth: 800,
-    
+    maxWidth: 600,
   },
   paper: {
-    maxWidth: 800,
+    maxWidth: 600,
     marginBottom: 50,
-    marginTop:20,
+    marginTop: 20,
   },
   button: {
     marginTop: 30,
@@ -34,6 +34,9 @@ export default function BasicTable(props) {
   const [row, serRow] = useState(props.rows);
   const [loading, setLoading] = useState(false);
   const [willing, setWilling] = useState(false);
+  const [snack, setSnack] = useState(false);
+  const [succ, setSucc] = useState("");
+  const [descri, setDescri] = useState("");
   const handleWilling = async () => {
     setLoading(true);
     const { username } = JSON.parse(localStorage.getItem("User_details"));
@@ -42,6 +45,9 @@ export default function BasicTable(props) {
         username,
         request_id: row.request_id,
       });
+      setSucc("success");
+      setSnack(true);
+      setDescri("Request send!");
       setWilling(true);
     } catch (err) {
       console.log(err);
@@ -56,6 +62,9 @@ export default function BasicTable(props) {
         username,
         request_id: row.request_id,
       });
+      setSucc("error");
+      setSnack(true);
+      setDescri("Request cancelled!");
       setWilling(false);
     } catch (err) {
       console.log(err);
@@ -124,6 +133,14 @@ export default function BasicTable(props) {
           </Button>
         )}
       </div>
+      {snack && (
+        <SnackBar
+          con={succ}
+          stat={snack}
+          fun={setSnack}
+          desc={descri}
+        ></SnackBar>
+      )}
     </TableContainer>
   );
 }

@@ -49,9 +49,13 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "2%",
     paddingRight: "2%",
   },
-  ham:{
-    margin:'5%'
+  dbutton:{
+    marginRight:30
   },
+  ham:{
+    margin:'5%',
+  },
+  
 }));
 
 export default function ButtonAppBar(props) {
@@ -75,6 +79,11 @@ export default function ButtonAppBar(props) {
             <Typography variant="h6" className={classes.title}>
               Blood Bank Drive
             </Typography>
+            {showHide && (
+                <Button color="inherit" href="/dashboard" className={classes.dbutton}>
+                  Dashboard
+                </Button>
+            )}
             {showHide && (
                 <Button color="inherit" onClick={()=>setDialog(true)}>
                   Logout

@@ -29,7 +29,6 @@ export default function DDOnationCard(props) {
   const [row, serRow] = useState(props.rows);
   return (
     <div>
-      
       <Grid item lg={12}>
         <TableContainer component={Paper} className={classes.paper}>
           <Table className={classes.table} aria-label="simple table">

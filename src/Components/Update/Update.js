@@ -4,8 +4,7 @@ import "./Update.css";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { FaWindows } from "react-icons/fa";
-
+import SnackBar from "../SnackBar/SnackBar";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -21,11 +20,22 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginTop: "2%",
   },
-  button: {
+  button1: {
     color: "white",
     backgroundColor: "#ea4848",
     width: "20%",
     paddingTop: "1%",
+    marginLeft:15,
+    marginRight:15,
+    // fontSize:"15px"
+  },
+  button2: {
+    color: "white",
+    backgroundColor: "#364653",
+    width: "20%",
+    paddingTop: "1%",
+    marginLeft:15,
+    marginRight:15,
     // fontSize:"15px"
   },
 }));
@@ -35,9 +45,9 @@ export default function UserUpdate(props) {
   const [username, setUname] = useState(userdetails.username);
   const [email, setUEmail] = useState(userdetails.email);
   const [phoneNo, setUNo] = useState(userdetails.phoneNo);
-
-  
-
+  const [snack, setSnack] = useState(false);
+  const [succerr, setSuccerr] = useState("");
+  const [descri, setDescri] = useState("");
   const handleEmail = (e) => {
     setUEmail(e.target.value);
   };
@@ -54,13 +64,18 @@ export default function UserUpdate(props) {
     let result;
     try {
       result = await MyUpdate(data);
-      const udata = JSON.parse(localStorage.getItem('User_details'));
+      setSnack(true)
+      setSuccerr("success")
+      setDescri("Updated successfully!");
+      const udata = JSON.parse(localStorage.getItem("User_details"));
       udata.email = data.email;
       udata.phoneNo = data.phoneNo;
+      
       localStorage.setItem("User_details", JSON.stringify(udata));
-      window.location.href = "/profile";
+      // window.location.href = "/profile";
     } catch (err) {
-      alert("Cannot update at the moment");
+      setSuccerr("success")
+      setDescri("Cannot update at the moment!");
     }
   };
 
@@ -200,11 +215,27 @@ export default function UserUpdate(props) {
       <div className={classes.buttonDiv}>
         <Button
           variant="contained"
-          className={classes.button}
+          className={classes.button2}
           onClick={handleUpdate}
+          
         >
           Submit
         </Button>
+        <Button
+          variant="contained"
+          className={classes.button1}
+          href="/profile"
+        >
+          Cancel
+        </Button>
+        {snack && (
+        <SnackBar
+          con={succerr}
+          stat={snack}
+          fun={setSnack}
+          desc={descri}
+        ></SnackBar>
+      )}
       </div>
     </div>
   );
