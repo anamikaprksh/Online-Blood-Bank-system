@@ -9,12 +9,13 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
-import MaterialUIPickers from '../Date/DatePicker' 
+import MaterialUIPickers from "../Date/DatePicker";
 import {
   MuiPickersUtilsProvider,
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       width: "50%",
       flexGrow: 1,
       backgroundColor: "white",
-
+      margin: theme.spacing(5),
       marginLeft: "25%",
       marginRight: "25%",
       marginTop: "3%",
@@ -44,12 +45,77 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  textfield: {
+    width: theme.spacing(26),
+    marginTop: "2%",
+    // marginTop: theme.spacing(5),
+    textAlign:"left",
+  },
 }));
+
+const bgroup = [
+  {
+    label: "A+",
+    value: "A+",
+  },
+  {
+    label: "B+",
+    value: "B+",
+  },
+  {
+    label: "AB+",
+    value: "AB+",
+  },
+  {
+    label: "O+",
+    value: "O+",
+  },
+  {
+    label: "A-",
+    value: "A-",
+  },
+  {
+    label: "B-",
+    value: "B-",
+  },
+  {
+    label: "AB-",
+    value: "AB-",
+  },
+  {
+    label: "O-",
+    value: "O-",
+  },
+];
+const gend = [
+  {
+    label: "Male",
+    value: "male",
+  },
+  {
+    label: "Female",
+    value: "female",
+  },
+  {
+    label: "Others",
+    value: "others",
+  },
+  
+];
 
 export default function Siup(props) {
   const [selectedDate1, setSelectedDate1] = React.useState(new Date());
   const [selectedDate2, setSelectedDate2] = React.useState(new Date());
-
+  const [currency, setCurrency] = React.useState("");
+  const [bgender, setBgender] = React.useState("");
+  const handleChange = (e) => {
+    setCurrency(e.target.value);
+    setBlood(String(e.target.value));
+  };
+  const handleChangegender = (e) => {
+    setBgender(e.target.value);
+    setGender(String(e.target.value));
+  };
   const handleDateChange1 = (date) => {
     setSelectedDate1(date);
     setDob(date);
@@ -68,8 +134,8 @@ export default function Siup(props) {
   const [password, setPassword] = useState("");
   const [blood, setBlood] = useState("");
   const [lastDate, setLastDate] = useState("");
-console.log(dob)
-console.log(lastDate)
+  console.log(dob);
+  console.log(lastDate);
   const handleSubmit = async () => {
     let result;
     const data = {
@@ -82,8 +148,6 @@ console.log(lastDate)
       blood,
       lastDate,
     };
-
-    console.log(data);
 
     try {
       result = await Signup(data);
@@ -158,25 +222,41 @@ console.log(lastDate)
                 maxDate={new Date()}
               />
             </Grid> */}
-            
+
             <Grid item xs={6}>
               <TextField
                 id="outlined-basic"
                 label="gender"
                 variant="outlined"
-                className={classes.center}
-                onChange={(e) => setGender(e.target.value)}
-              />
+                select
+                value={bgender}
+                className={classes.textfield}
+                onChange={handleChangegender}
+              >
+                 {gend.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+              </TextField>
             </Grid>
-            
+
             <Grid item xs={6}>
               <TextField
                 id="outlined-basic"
                 label="Blood Group"
                 variant="outlined"
-                className={classes.center}
-                onChange={(e) => setBlood(e.target.value)}
-              />
+                select
+                value={currency}
+                className={classes.textfield}
+                onChange={handleChange}
+              >
+                {bgroup.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+              </TextField>
             </Grid>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
               <Grid item xs={6}>
@@ -184,7 +264,7 @@ console.log(lastDate)
                   margin="normal"
                   id="date-picker-dialog"
                   label="Date Of Birth"
-                  views={['year', 'month', 'date']}
+                  views={["year", "month", "date"]}
                   value={selectedDate1}
                   onChange={handleDateChange1}
                   format="yyyy-MM-dd"
@@ -210,7 +290,7 @@ console.log(lastDate)
                   margin="normal"
                   id="date-picker-dialog"
                   label="Last Donation Date"
-                  views={['year', 'month', 'date']}
+                  views={["year", "month", "date"]}
                   value={selectedDate2}
                   onChange={handleDateChange2}
                   format="yyyy-MM-dd"
@@ -224,7 +304,7 @@ console.log(lastDate)
           </Grid>
         </div>
       </div>
-                  
+
       <div className="sign-button">
         <button onClick={handleSubmit}>Register</button>
       </div>

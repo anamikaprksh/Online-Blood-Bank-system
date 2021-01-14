@@ -24,6 +24,9 @@ const useStyles = makeStyles({
     paddingRight: "5%",
     width: "90%",
   },
+  gt:{
+    padding:30,
+  }
 });
 
 export default function MyDonation() {
@@ -64,13 +67,15 @@ export default function MyDonation() {
       <div style={{ textAlign: "center" }}>
         {load && <Animation></Animation>}
       </div>
-      <Grid container>
-      <Grid item lg={1} md={1} xs={12}></Grid>
+      <Grid container spacing={3} className={classes.gt}>
         {fresult.map((inside) => {
-          return <DDetailsCard rows={inside} />;
+          return (
+            <Grid item lg={4}>
+            <DDetailsCard rows={inside} />
+            </Grid>
+          );
         })}
       </Grid>
-      <Grid item lg={1} md={1} xs={12}></Grid>
     </div>
   );
 }
