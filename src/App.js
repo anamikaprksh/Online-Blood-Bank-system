@@ -24,6 +24,7 @@ import ProtectedRoute from './Components/ProtectedRoute/protectedRoute'
 import NotSecureRoute from './Components/ProtectedRoute/noSecureRoute'
 import UserUpdate from './Components/Update/Update'
 import Mymore from "./Components/myreqmore/myreqmore";
+import MyDonation from "./Components/MyDonation/MyDonation";
 Axios.defaults.baseURL='https://online-blood-bank-sys.herokuapp.com'
 
 const Theme = createMuiTheme({
@@ -66,7 +67,7 @@ function App() {
         <ProtectedRoute path='/donate' component={Donation} exact pathname='/login'/>
         <ProtectedRoute path='/update' component={UserUpdate} exact pathname='/login'/>
         <ProtectedRoute path='/request' component={Requests} exact pathname='/login'/>
-
+        <ProtectedRoute path='/mydonation' component={MyDonation} exact pathname='/login' />
       </Switch>
     </div>
   );

@@ -112,3 +112,15 @@ export const cancelWilling = (data) => {
       });
   });
 };
+
+export const MyDonationapi = (data) => {
+  return new Promise((resolve, reject) => {
+    Axios.post("/donor/past_donations",data)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
+};

@@ -214,6 +214,7 @@ console.log(lastDate)
                   value={selectedDate2}
                   onChange={handleDateChange2}
                   format="yyyy-MM-dd"
+                  maxDate={new Date()}
                   KeyboardButtonProps={{
                     "aria-label": "change date",
                   }}

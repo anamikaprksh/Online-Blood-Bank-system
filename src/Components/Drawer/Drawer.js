@@ -7,12 +7,6 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-// import ListItemText from "@material-ui/core/ListItemText";
-
-import List from '@material-ui/core/List';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
 
 import { Spin as Hamburger } from "hamburger-react";
 import "./Drawer.css";
@@ -106,7 +100,7 @@ export default function TemporaryDrawer() {
           <ListItemText primary="My Requests" className={classes.root}/>
         </ListItemLink>
         <Divider />
-        <ListItemLink href="/donate">
+        <ListItemLink href="/MyDonation">
           <ListItemText primary="My Donations" className={classes.root1}/>
         </ListItemLink>
         <Divider />   

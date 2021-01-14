@@ -32,16 +32,15 @@ export default function Donation() {
         <div>
           <hr></hr>
         </div>
-       
       </div>
       <Grid container>
-          <Grid item xs={3}></Grid>
-          <Grid item lg={8} xs={12}>
-            {data.map((e) => {
-              return <DetailsCard rows={e} />;
-            })}
-          </Grid>
+        <Grid item lg={3} xs={12}></Grid>
+        <Grid item lg={6} xs={12}>
+          {data.map((e) => {
+            return <DetailsCard rows={e} />;
+          })}
         </Grid>
+      </Grid>
     </div>
   );
 }
