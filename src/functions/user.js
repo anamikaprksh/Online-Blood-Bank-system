@@ -77,3 +77,38 @@ export const MyUpdate = (data) => {
       });
   });
 };
+
+export const requestNotFullfilled = (data) => {
+  return new Promise((resolve, reject) => {
+    Axios.post("/donor/not_fullfilled",data)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
+};
+export const showWilling = (data) => {
+  return new Promise((resolve, reject) => {
+    Axios.post("/donor/willing",data)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
+};
+
+export const cancelWilling = (data) => {
+  return new Promise((resolve, reject) => {
+    Axios.post("/donor/not_willing",data)
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        reject(err.response.data);
+      });
+  });
+};

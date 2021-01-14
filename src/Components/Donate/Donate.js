@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Donate.css";
+import { requestNotFullfilled } from "../../functions/user";
+import { set } from "date-fns";
+import DetailsCard from "../DetailsCard/detailsCard";
+import Grid from "@material-ui/core/Grid";
+
 export default function Donation() {
+  const [data, setData] = useState([]);
+  const { blood, username } = JSON.parse(localStorage.getItem("User_details"));
+  const handleDataFetch = async () => {
+    try {
+      const result = await requestNotFullfilled({
+        username,
+        blood_group: blood,
+      });
+      console.log(result);
+      setData(result);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    handleDataFetch();
+  }, []);
   return (
     <div className="back-img">
       <div className="outer1">
@@ -10,213 +32,16 @@ export default function Donation() {
         <div>
           <hr></hr>
         </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        <div className="flexing marg">
-          <div className="d-req">
-            <h2>harshad</h2>
-          </div>
-          <div className="d-units">
-            <h2>3 units</h2>
-          </div>
-          <div className="d-button">
-            <button>donate</button>
-          </div>
-        </div>
-
-        
+       
       </div>
+      <Grid container>
+          <Grid item xs={3}></Grid>
+          <Grid item lg={8} xs={12}>
+            {data.map((e) => {
+              return <DetailsCard rows={e} />;
+            })}
+          </Grid>
+        </Grid>
     </div>
   );
 }
