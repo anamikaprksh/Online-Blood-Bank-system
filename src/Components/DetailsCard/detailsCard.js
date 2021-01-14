@@ -7,16 +7,18 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-import { showWilling,cancelWilling } from "../../functions/user";
-import Loading from '../LoadingAnimation/loading'
+import { showWilling, cancelWilling } from "../../functions/user";
+import Loading from "../LoadingAnimation/loading";
 
 const useStyles = makeStyles({
   table: {
-    maxWidth: 600,
+    maxWidth: 800,
+    
   },
   paper: {
-    maxWidth: 600,
+    maxWidth: 800,
     marginBottom: 50,
+    marginTop:20,
   },
   button: {
     marginTop: 30,
@@ -30,36 +32,40 @@ const useStyles = makeStyles({
 export default function BasicTable(props) {
   const classes = useStyles();
   const [row, serRow] = useState(props.rows);
-  const [loading,setLoading]=useState(false)
-  const [willing,setWilling]=useState(false)
+  const [loading, setLoading] = useState(false);
+  const [willing, setWilling] = useState(false);
   const handleWilling = async () => {
-    setLoading(true)
+    setLoading(true);
     const { username } = JSON.parse(localStorage.getItem("User_details"));
     try {
-      const result = await showWilling({username,request_id:row.request_id});
-      setWilling(true)
+      const result = await showWilling({
+        username,
+        request_id: row.request_id,
+      });
+      setWilling(true);
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }
-    setLoading(false)
+    setLoading(false);
   };
   const handleCancelWilling = async () => {
-    setLoading(true)
+    setLoading(true);
     const { username } = JSON.parse(localStorage.getItem("User_details"));
     try {
-      const result = await cancelWilling({username,request_id:row.request_id});
-      setWilling(false)
+      const result = await cancelWilling({
+        username,
+        request_id: row.request_id,
+      });
+      setWilling(false);
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }
-    setLoading(false)
+    setLoading(false);
   };
 
   return (
     <TableContainer component={Paper} className={classes.paper}>
-      {loading && <Loading/>}
+      {loading && <Loading />}
       <Table className={classes.table} aria-label="simple table">
         <TableBody>
           <TableRow key={row.request_id}>
@@ -97,14 +103,26 @@ export default function BasicTable(props) {
         </TableBody>
       </Table>
       <div className={classes.buttonDiv}>
-        {!willing && <Button variant="contained" color="primary" onClick={handleWilling} className={classes.button}>
-          Donate
-        </Button>}
-        {
-          willing && <Button variant="contained" color="secondary" onClick={handleCancelWilling} className={classes.button}>
-          Cancel
-        </Button>
-        }
+        {!willing && (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleWilling}
+            className={classes.button}
+          >
+            Donate
+          </Button>
+        )}
+        {willing && (
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={handleCancelWilling}
+            className={classes.button}
+          >
+            Cancel
+          </Button>
+        )}
       </div>
     </TableContainer>
   );
