@@ -24,7 +24,6 @@ import ProtectedRoute from './Components/ProtectedRoute/protectedRoute'
 import NotSecureRoute from './Components/ProtectedRoute/noSecureRoute'
 import UserUpdate from './Components/Update/Update'
 import Mymore from "./Components/myreqmore/myreqmore";
-import WillingTable from "./Components/Willingness/Willingness";
 Axios.defaults.baseURL='https://online-blood-bank-sys.herokuapp.com'
 
 const Theme = createMuiTheme({
@@ -49,17 +48,12 @@ function App() {
       <NavbarPage/>
       <Router>
         <HeaderPage path="/header"></HeaderPage>
-        <RQ path="/request"></RQ>
-        <DonateBlood path="/donate"></DonateBlood>
-        <UProfile path="/profile"></UProfile>
         <AR path="/allrequest"></AR>
         <MB path="/more"></MB>
         <MM path="/moremore"></MM>
         <Head2 path='/mHeader'></Head2>
         <Draw path='/drawer'></Draw>
         <MyMoreReq path='/myrequestmore'></MyMoreReq>
-        <MyUserUpdate path='/update'></MyUserUpdate>
-        <MyWillingT path='/willingness'></MyWillingT>
         {/* <Burger path='/mHeader'></Burger> */}
       </Router>
       {/* <FooterPage></FooterPage> */}
@@ -68,6 +62,11 @@ function App() {
         <NotSecureRoute path='/login' component={Login} exact pathname='/dashboard' />
         <NotSecureRoute path='/signup' component={Signup} exact pathname='/dashboard' />
         <ProtectedRoute path='/dashboard' component={Dashboard} exact pathname='/login'/>
+        <ProtectedRoute path='/profile' component={UserProfile} exact pathname='/login'/>
+        <ProtectedRoute path='/donate' component={Donation} exact pathname='/login'/>
+        <ProtectedRoute path='/update' component={UserUpdate} exact pathname='/login'/>
+        <ProtectedRoute path='/request' component={Requests} exact pathname='/login'/>
+
       </Switch>
     </div>
   );
@@ -80,15 +79,7 @@ function HeaderPage() {
   return <Head></Head>;
 }
 
-function RQ() {
-  return <Requests></Requests>;
-}
-function DonateBlood() {
-  return <Donation></Donation>;
-}
-function UProfile() {
-  return <UserProfile></UserProfile>;
-}
+
 function AR() {
   return <AllReq></AllReq>;
 }
@@ -108,11 +99,6 @@ function Draw(){
 function MyMoreReq(){
   return <Mymore></Mymore>
 }
-function MyUserUpdate(){
-  return <UserUpdate></UserUpdate>
-}
-function MyWillingT(){
-  return <WillingTable></WillingTable>
-}
+
 
 export default App;

@@ -18,7 +18,9 @@ export default function AlertDialogSlide(props) {
     localStorage.removeItem('AUTH')
     localStorage.removeItem('User_details')
     setOpen(false);
+    window.location.href='/login'
     window.location.reload()
+    console.log('hello')
 
   }
   const handleClose = () => {
