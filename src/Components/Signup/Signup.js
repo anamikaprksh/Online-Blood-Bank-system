@@ -47,6 +47,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Siup(props) {
+  const [selectedDate1, setSelectedDate1] = React.useState(new Date());
+  const [selectedDate2, setSelectedDate2] = React.useState(new Date());
+
+  const handleDateChange1 = (date) => {
+    setSelectedDate1(date);
+    setDob(date);
+  };
+  const handleDateChange2 = (date) => {
+    setSelectedDate2(date);
+    setLastDate(date);
+  };
+
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [dob, setDob] = useState(null);
@@ -56,7 +68,8 @@ export default function Siup(props) {
   const [password, setPassword] = useState("");
   const [blood, setBlood] = useState("");
   const [lastDate, setLastDate] = useState("");
-
+console.log(dob)
+console.log(lastDate)
   const handleSubmit = async () => {
     let result;
     const data = {
@@ -172,7 +185,8 @@ export default function Siup(props) {
                   id="date-picker-dialog"
                   label="Date Of Birth"
                   views={['year', 'month', 'date']}
-                  onChange={(date) => setDob(date)}
+                  value={selectedDate1}
+                  onChange={handleDateChange1}
                   format="yyyy-MM-dd"
                   KeyboardButtonProps={{
                     "aria-label": "change date",
@@ -197,7 +211,8 @@ export default function Siup(props) {
                   id="date-picker-dialog"
                   label="Last Donation Date"
                   views={['year', 'month', 'date']}
-                  onChange={(date) => setLastDate(date)}
+                  value={selectedDate2}
+                  onChange={handleDateChange2}
                   format="yyyy-MM-dd"
                   KeyboardButtonProps={{
                     "aria-label": "change date",
