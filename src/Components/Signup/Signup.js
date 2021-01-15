@@ -15,7 +15,8 @@ import {
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
-import MenuItem from '@material-ui/core/MenuItem';
+import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(26),
     marginTop: "2%",
     // marginTop: theme.spacing(5),
-    textAlign:"left",
+    textAlign: "left",
   },
 }));
 
@@ -100,7 +101,6 @@ const gend = [
     label: "Others",
     value: "others",
   },
-  
 ];
 
 export default function Siup(props) {
@@ -152,7 +152,7 @@ export default function Siup(props) {
       localStorage.setItem("AUTH", true);
       localStorage.setItem("User_details", JSON.stringify(result));
       props.history.push("/dashboard");
-      window.location.reload()
+      window.location.reload();
     } catch (err) {
       console.log(err);
       const {
@@ -232,11 +232,11 @@ export default function Siup(props) {
                 className={classes.textfield}
                 onChange={handleChangegender}
               >
-                 {gend.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
+                {gend.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
               </TextField>
             </Grid>
 
@@ -251,10 +251,10 @@ export default function Siup(props) {
                 onChange={handleChange}
               >
                 {bgroup.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
               </TextField>
             </Grid>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -305,7 +305,9 @@ export default function Siup(props) {
       </div>
 
       <div className="sign-button">
-        <button onClick={handleSubmit}>Register</button>
+        <Button variant="contained" color="primary" onClick={handleSubmit}>
+          Signup
+        </Button>
       </div>
     </div>
   );
