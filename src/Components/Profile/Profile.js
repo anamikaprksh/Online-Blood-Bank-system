@@ -11,6 +11,10 @@ const useStyles = makeStyles((theme) => ({
       width: "25ch",
     },
   },
+  bg:{
+    backgroundColor:"#eeeeee",
+    minHeight: "89vh",
+  },
   text: {
     marginTop: "1%",
     width: "100%",
@@ -24,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:"#ea4848",
     width:"25%",
     paddingTop:"1.5%",
-    // fontSize:"25px"
+    marginBottom:20,
   },
 }));
 
@@ -38,7 +42,7 @@ export default function UserProfile() {
   }, []);
   
   return (
-    <div className="ba-image">
+    <div className={classes.bg}>
       <div className="outer">
         <div className="p-head">
           <h1>Details</h1>

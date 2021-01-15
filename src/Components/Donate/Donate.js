@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
   },
+  bg:{
+    backgroundColor:"#eeeeee",
+    minHeight: "89vh",
+  },
   mar:{
     paddingLeft:100,
     paddingRight:100,
@@ -42,7 +46,7 @@ export default function Donation() {
     handleDataFetch();
   }, []);
   return (
-    <div className="back-img">
+    <div className={classes.bg}>
       <div className="outer1">
         <div className="heading">
           <h1>Donate</h1>

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#00FF00",
   },
   bg:{
-    backgroundColor:"rgb(230, 230, 230)",
+    backgroundColor:"#eeeeee",
     minHeight: "89vh",
   },
   hr: {
