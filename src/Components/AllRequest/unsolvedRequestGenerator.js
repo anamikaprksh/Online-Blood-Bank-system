@@ -63,7 +63,7 @@ export default function AutoGrid() {
           );
         })}
       </Grid>
-      {data.length == 0 && (
+      {data.length == 0 && !loadanim && (
             <div className={classes.notfound}>
               <img src={NoResult} className={classes.image}></img>
               <Typography>Empty Request!</Typography>

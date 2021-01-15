@@ -127,15 +127,13 @@ export default function Siup(props) {
 
   const classes = useStyles();
   const [username, setUsername] = useState("");
-  const [dob, setDob] = useState(null);
+  const [dob, setDob] = useState(new Date());
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const [password, setPassword] = useState("");
   const [blood, setBlood] = useState("");
-  const [lastDate, setLastDate] = useState("");
-  console.log(dob);
-  console.log(lastDate);
+  const [lastDate, setLastDate] = useState(new Date());
   const handleSubmit = async () => {
     let result;
     const data = {
