@@ -18,7 +18,6 @@ import NavbarPage from './Components/Header1/Header1'
 import TemporaryDrawer from './Components/Drawer/Drawer'
 import Head3 from './Components/Header3/Header3'
 import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import Axios from 'axios'
 import ProtectedRoute from './Components/ProtectedRoute/protectedRoute'
 import NotSecureRoute from './Components/ProtectedRoute/noSecureRoute'
