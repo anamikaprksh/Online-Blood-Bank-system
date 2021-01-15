@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Donate.css";
 import { requestNotFullfilled } from "../../functions/user";
-import { set } from "date-fns";
 import DetailsCard from "../DetailsCard/detailsCard";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from '@material-ui/core/styles';

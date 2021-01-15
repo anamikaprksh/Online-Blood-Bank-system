@@ -31,30 +31,6 @@ hr {
 .marg {
   margin-top: 2%;
 }
-/* .details {
-  padding: 0.5%;
-  background-color: #ffffff;
-  margin-top: 2%;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 35px;
-  box-shadow: 6px 6px grey;
-  border: 1px solid black;
-}
-.details button {
-  border-radius: 35px;
-  padding: 10px 23px;
-  margin-top: 8.5%;
-  font-size: 25px;
-}
-.name {
-  width: 45%;
-  padding-left: 2%;
-}
-.wi {
-  width: 12%;
-} */
 .d-req {
   font-size: 15px;
   border: 1px solid gray;

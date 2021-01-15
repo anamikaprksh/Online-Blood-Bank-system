@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
   colr: {
     color: "#00FF00",
   },
+  bg:{
+    backgroundColor:"rgb(230, 230, 230)",
+    minHeight: "89vh",
+  },
   hr: {
     paddingLeft: "2%",
     paddingRight: "2%",
@@ -51,7 +55,7 @@ export default function AllReq() {
   useEffect(() => {}, [heading]);
 
   return (
-    <div>
+    <div className={classes.bg}>
       <div>
         <div>
           <div>
