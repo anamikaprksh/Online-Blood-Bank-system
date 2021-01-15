@@ -53,7 +53,7 @@ export default function MyDonation() {
   const [fresultup, setFresultup] = useState([]);
   const [load, setLoad] = useState(true);
   const [value, setValue] = React.useState(1);
-
+  const [same,setSame]=useState(true)
   const handleChange = (event, newValue) => {
     setValue(newValue);
     if (value == 1) {
@@ -138,7 +138,7 @@ export default function MyDonation() {
       <div style={{ textAlign: "center" }}>
         {load && <Animation></Animation>}
       </div>
-      {fresult.length == 0 && !load && (
+      {fresult.length == 0 && !load && topic &&(
             <div className={classes.notfound}>
               <img src={NoResult} className={classes.image}></img>
               <Typography>Looks like you haven't donated yet</Typography>
@@ -155,7 +155,7 @@ export default function MyDonation() {
           })}
         </Grid>
       )}
-      {fresultup.length == 0 && !load && (
+      {fresultup.length == 0 && !load && !topic &&(
             <div className={classes.notfound}>
               <img src={NoResult} className={classes.image}></img>
               <Typography>Looks like there is no upcoming donations</Typography>
