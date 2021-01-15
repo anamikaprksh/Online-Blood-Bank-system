@@ -152,6 +152,7 @@ export default function Siup(props) {
       localStorage.setItem("AUTH", true);
       localStorage.setItem("User_details", JSON.stringify(result));
       props.history.push("/dashboard");
+      window.location.reload()
     } catch (err) {
       console.log(err);
       const {
