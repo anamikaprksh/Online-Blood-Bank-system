@@ -10,7 +10,6 @@ import Button from "@material-ui/core/Button";
 import { selectDonor, deselectDonor } from "../../functions/user";
 import Loading from "../LoadingAnimation/loading";
 import SnackBar from "../SnackBar/SnackBar";
-
 const useStyles = makeStyles({
   table: {
     maxWidth: 600,
