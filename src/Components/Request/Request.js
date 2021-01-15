@@ -71,12 +71,10 @@ export default function Requests() {
   const [descri, setDescri] = useState("");
   const [blood_group, setBloodgroup] = useState("");
   const [units, setUnits] = useState("");
-  const [date_of_request, setDoa] = useState("");
+  const [date_of_request, setDoa] = useState(new Date());
   const [username, setUserId] = useState("");
-  const [currency, setCurrency] = React.useState("A+");
   // const [detls, setDetls] = useState({});
   const handleChange = (e) => {
-    setCurrency(e.target.value);
     setBloodgroup(String(e.target.value));
   };
 
@@ -128,7 +126,7 @@ export default function Requests() {
             id="outlined-basic"
             label="Blood Group"
             select
-            value={currency}
+            value={blood_group}
             onChange={handleChange}
             variant="outlined"
             className={classes.textfield}
