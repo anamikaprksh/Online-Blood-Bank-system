@@ -13,11 +13,11 @@ import SnackBar from "../SnackBar/SnackBar";
 
 const useStyles = makeStyles({
   table: {
-    maxWidth: 600,
+    maxWidth: 800,
   },
   paper: {
-    maxWidth: 600,
-    marginBottom: 50,
+    maxWidth: 800,
+    marginBottom: 10,
     marginTop: 20,
   },
   button: {

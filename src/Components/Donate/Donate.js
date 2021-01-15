@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mar:{
-    paddingLeft:115
+    paddingLeft:100,
+    paddingRight:100,
   }
 }));
 
@@ -54,7 +55,7 @@ export default function Donation() {
       <div style={{ textAlign: "center", marginTop: "2%" }}>
           {loading && <Loading></Loading>}
         </div>
-      <Grid container className={classes.mar}>
+      <Grid container className={classes.mar} spacing={10}>
         {data.map((e) => {
           return (
             <Grid item lg={6} xs={12}>
