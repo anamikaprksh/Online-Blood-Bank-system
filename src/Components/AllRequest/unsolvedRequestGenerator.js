@@ -4,6 +4,9 @@ import Grid from "@material-ui/core/Grid";
 import { unSolvedRequest } from "../../functions/user";
 import UnSolvedCard from "./unsolvedRequestCard";
 import Animation from "../Animation/Animation";
+import NoResult from "../../images/no-results.png";
+import Typography from "@material-ui/core/Typography";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +19,14 @@ const useStyles = makeStyles((theme) => ({
   },
   grid:{
     padding:30
+  },
+  notfound: {
+    alignSelf: "center",
+    textAlign:"center"
+  },
+  image:{
+    maxWidth:theme.spacing(50),
+    marginLeft:theme.spacing(50)
   }
 }));
 
@@ -52,6 +63,13 @@ export default function AutoGrid() {
           );
         })}
       </Grid>
+      {data.length == 0 && (
+            <div className={classes.notfound}>
+              <img src={NoResult} className={classes.image}></img>
+              <Typography>Empty Request!</Typography>
+              <Typography><a href='/request'>Click here to add new request</a></Typography>
+            </div>
+          )}
     </div>
   );
 }

@@ -14,24 +14,33 @@ import Grid from "@material-ui/core/Grid";
 import NoResult from "../../images/no-results.png";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > * + *": {
+      marginTop: theme.spacing(2),
+    },
+  },
   appBar: {
-    position: "relative",
+    position: "fixed",
+    maxWidth: "100%",
   },
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
   },
   bodytitle: {
-    marginTop: 30,
+    marginTop: 100,
     marginLeft: 20,
   },
   grid: {
     margin: 20,
   },
   notfound: {
-    textAlign: "center",
-    marginLeft:theme.spacing(50)
+    alignSelf: "center",
+    textAlign:"center"
   },
+  image:{
+    maxWidth:theme.spacing(50)
+  }
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -62,7 +71,7 @@ export default function FullScreenDialog(props) {
     handleFetchUserDetails();
   }, []);
   return (
-    <div>
+    <div className={classes.root}>
       <Dialog
         fullScreen
         open={open}
@@ -95,13 +104,13 @@ export default function FullScreenDialog(props) {
               </Grid>
             );
           })}
-          {data.length == 0 && (
+        </Grid>
+        {data.length == 0 && (
             <div className={classes.notfound}>
-              <img src={NoResult}></img>
+              <img src={NoResult} className={classes.image}></img>
               <Typography>No Donors found </Typography>
             </div>
           )}
-        </Grid>
       </Dialog>
     </div>
   );

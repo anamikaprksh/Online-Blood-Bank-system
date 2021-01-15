@@ -5,6 +5,9 @@ import DetailsCard from "../DetailsCard/detailsCard";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from "../Animation/Animation";
+import Typography from "@material-ui/core/Typography";
+import NoResult from "../../images/no-results.png";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +19,14 @@ const useStyles = makeStyles((theme) => ({
   mar:{
     paddingLeft:100,
     paddingRight:100,
+  },
+  notfound: {
+    textAlign:"center"
+  },
+  image:{
+    maxWidth:theme.spacing(50),
+    marginLeft:theme.spacing(50),
+    marginTop:100
   }
 }));
 
@@ -63,6 +74,12 @@ export default function Donation() {
           );
         })}
       </Grid>
+      {data.length == 0 && !loading && (
+            <div className={classes.notfound}>
+              <img src={NoResult} className={classes.image}></img>
+              <Typography>There is no request matching your blood group </Typography>
+            </div>
+          )}
     </div>
   );
 }

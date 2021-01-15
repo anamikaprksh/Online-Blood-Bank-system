@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#00FF00",
   },
   bg:{
-    backgroundColor:"rgb(230, 230, 230)",
+    backgroundColor:"#eeeeee",
     minHeight: "89vh",
   },
   hr: {
@@ -69,21 +69,6 @@ export default function AllReq() {
           <div className={classes.hr}>
             <hr></hr>
           </div>
-          {/* <Paper square className={classes.pp}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="secondary"
-            centered
-            TabIndicatorProps={{
-              style: { opacity: "15%", paddingLeft: "0.5%"},
-            }}
-          >
-            <Tab label="Solved Requests" className={classes.tabe}/>
-            <Tab label="Unsolved Requests" className={classes.tabe}/>
-          </Tabs>
-        </Paper> */}
         </div>
       </div>
       <div>
