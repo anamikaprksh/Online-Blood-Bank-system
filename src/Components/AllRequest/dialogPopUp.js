@@ -8,26 +8,30 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
-import {donorDetails} from '../../functions/user'
-import UserCard from './userCard'
+import { donorDetails } from "../../functions/user";
+import UserCard from "./userCard";
 import Grid from "@material-ui/core/Grid";
-
+import NoResult from "../../images/no-results.png";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    position: "fixed",
+    position: "relative",
   },
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
   },
-  bodytitle:{
-      marginTop:100,
-      marginLeft:20
+  bodytitle: {
+    marginTop: 30,
+    marginLeft: 20,
   },
-  grid:{
-    margin:20
-  }
+  grid: {
+    margin: 20,
+  },
+  notfound: {
+    textAlign: "center",
+    marginLeft:theme.spacing(50)
+  },
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -36,29 +40,27 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function FullScreenDialog(props) {
   const classes = useStyles();
-  const [row,setRow]=React.useState(props.row);
-  const [data,setData]=useState([])
+  const [row, setRow] = React.useState(props.row);
+  const [data, setData] = useState([]);
   const [open, setOpen] = React.useState(true);
 
   const handleClose = () => {
     setOpen(false);
     props.detailsFunction(false);
   };
-  const handleFetchUserDetails=async()=>{
-      const {request_id}=row
-      try{
-          const result=await donorDetails({request_id})
-          console.log(result)
-          setData(result)
-      }
-      catch(err){
-          console.log(err)
-      }
-
-  }
-  useEffect(()=>{
-    handleFetchUserDetails()
-  },[])
+  const handleFetchUserDetails = async () => {
+    const { request_id } = row;
+    try {
+      const result = await donorDetails({ request_id });
+      console.log(result);
+      setData(result);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    handleFetchUserDetails();
+  }, []);
   return (
     <div>
       <Dialog
@@ -83,18 +85,22 @@ export default function FullScreenDialog(props) {
           </Toolbar>
         </AppBar>
         <Typography variant="h4" className={classes.bodytitle}>
-          List of users who are ready to donate.
+          List of donors who are ready to donate.
         </Typography>
-        <Grid container spacing={3} className={classes.grid}> 
-            {
-                data.map((e)=>{
-                    return(
-                        <Grid item lg={4}>
-                            <UserCard rows={e} requestId={row.request_id}/>
-                        </Grid>
-                    )
-                })
-            }
+        <Grid container spacing={3} className={classes.grid}>
+          {data.map((e) => {
+            return (
+              <Grid item lg={4}>
+                <UserCard rows={e} requestId={row.request_id} />
+              </Grid>
+            );
+          })}
+          {data.length == 0 && (
+            <div className={classes.notfound}>
+              <img src={NoResult}></img>
+              <Typography>No Donors found </Typography>
+            </div>
+          )}
         </Grid>
       </Dialog>
     </div>
