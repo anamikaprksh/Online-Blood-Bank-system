@@ -12,9 +12,14 @@ const useStyles = makeStyles((theme) => ({
       width: "25ch",
     },
   },
+  bg:{
+    backgroundColor:"#eeeeee",
+    minHeight: "89vh",
+  },
   text: {
     marginTop: "1%",
     width: "100%",
+    backgroundColor:"white",
   },
   buttonDiv: {
     textAlign: "center",
@@ -27,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "1%",
     marginLeft:15,
     marginRight:15,
+    marginBottom:20,
     // fontSize:"15px"
   },
   button2: {
@@ -36,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "1%",
     marginLeft:15,
     marginRight:15,
+    marginBottom:20,
     // fontSize:"15px"
   },
 }));
@@ -90,7 +97,7 @@ export default function UserUpdate(props) {
   }, []);
 
   return (
-    <div className="ba-image">
+    <div className={classes.bg}>
       <div className="outer">
         <div className="p-head">
           <h1>Update Details</h1>

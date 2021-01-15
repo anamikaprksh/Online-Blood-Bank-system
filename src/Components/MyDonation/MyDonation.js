@@ -11,6 +11,10 @@ const useStyles = makeStyles({
   table: {
     minWidth: 400,
   },
+  bg: {
+    backgroundColor: "#eeeeee",
+    minHeight: "89vh",
+  },
   paper: {
     maxWidth: 600,
     marginBottom: 50,
@@ -90,7 +94,7 @@ export default function MyDonation() {
   }, []);
 
   return (
-    <div>
+    <div className={classes.bg}>
       <div>
         <h1>My Donations</h1>
       </div>

@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme) => ({
       width: "25ch",
     },
   },
+  bg: {
+    backgroundColor: "#eeeeee",
+    minHeight: "89vh",
+  },
   text: {
     width: "100%",
     marginTop: "5%",
