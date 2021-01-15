@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  appb:{
+    backgroundColor:"#364653"
+  },
   title: {
     flexGrow: 1,
   },
@@ -70,8 +73,8 @@ export default function ButtonAppBar(props) {
     <div className={classes.root} style={{ marginBottom: "75px" }}>
       {dialog && <Dialog state={true} func={setDialog}/>}
       <MuiThemeProvider theme={Theme}>
-        <AppBar position="fixed">
-          <Toolbar variant="dense">
+        <AppBar position="fixed" className={classes.appb}>
+          <Toolbar>
            <div className={classes.draw}>
            {showHide && (<TemporaryDrawer></TemporaryDrawer>)}
            {!showHide && (<div className={classes.ham}><Hamburger></Hamburger></div>)}
