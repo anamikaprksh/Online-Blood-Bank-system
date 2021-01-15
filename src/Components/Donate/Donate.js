@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth:theme.spacing(50),
     marginLeft:theme.spacing(50),
     marginTop:100
-  }
+  },
 }));
 
 export default function Donation() {
