@@ -49,7 +49,6 @@ function App() {
       <NavbarPage/>
       <Router>
         <HeaderPage path="/header"></HeaderPage>
-        <AR path="/allrequest"></AR>
         <MB path="/more"></MB>
         <MM path="/moremore"></MM>
         <Head2 path='/mHeader'></Head2>
@@ -68,6 +67,8 @@ function App() {
         <ProtectedRoute path='/update' component={UserUpdate} exact pathname='/login'/>
         <ProtectedRoute path='/request' component={Requests} exact pathname='/login'/>
         <ProtectedRoute path='/mydonation' component={MyDonation} exact pathname='/login' />
+        <ProtectedRoute path='/allrequest' component={AllReq} exact pathname='/login' />
+
       </Switch>
     </div>
   );
@@ -80,10 +81,6 @@ function HeaderPage() {
   return <Head></Head>;
 }
 
-
-function AR() {
-  return <AllReq></AllReq>;
-}
 function MB() {
   return <MoreButton></MoreButton>;
 }
